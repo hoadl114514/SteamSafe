@@ -3,7 +3,7 @@ import zipfile
 
 root = Path(__file__).parents[1]
 exclude = {".venv", ".release-keys", ".build-cache", ".reference", "research", "build", "dist", "test-output", "__pycache__", ".git"}
-output = root / "dist/SteamSafe-v0.1.2.4-Beta-source.zip"
+output = root / "dist/SteamSafe-v0.1.2.5-Beta-source.zip"
 with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED) as archive:
     for file in sorted(root.rglob("*")):
         relative = file.relative_to(root)

@@ -6,7 +6,7 @@ root = Path(__file__).resolve().parents[1]
 analysis = '''
 from pathlib import Path
 a = Analysis(['main.py'], pathex=[], binaries=[],
-    datas=[('assets','assets'), ('licenses','licenses')],
+    datas=[('assets','assets'), ('licenses','licenses'), ('tests/SteamProcessFixture.cs','tests')],
     hiddenimports=['sentinel.release_key'], hookspath=[], hooksconfig={}, runtime_hooks=[],
     excludes=['tkinter','pystray','PySide6.QtNetwork','PySide6.QtQml','PySide6.QtQuick',
               'PySide6.QtOpenGL','PySide6.QtPdf','PySide6.QtSvg','PySide6.QtSql'],

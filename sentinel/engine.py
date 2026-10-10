@@ -53,6 +53,10 @@ class Engine:
         self.last_observations = []
         self.worker_state = 'starting'
         self.guard_state = 'starting'
+        self.background_lock = threading.Lock()
+        self.background_pending = False
+        self.guard_snapshot = None
+        self.last_guard_full_hash = 0
 
     def client_audit(self, root, ref, refresh_registry=False):
         with self.audit_lock:
@@ -177,6 +181,8 @@ class Engine:
             self.last_registry_audit = 0
             self.registry_issues = []
             self.guard_auditor.invalidate()
+            self.guard_snapshot = None
+            self.last_guard_full_hash = 0
         if self.watcher:
             events = set(events) | self.watcher.drain()
         processes = windows.steam_processes(root)
@@ -208,11 +214,30 @@ class Engine:
             if processes and self.settings.get("stop_on_mismatch", True):
                 windows.stop_steam(root)
             return
+        if started and not (self.update_state and self.update_state.root == root):
+            self.schedule_background_scan('检测到 Steam 进程启动')
         if not started and not events and now - self.last_guard_audit < 2:
             return
         if started or events or now - self.last_guard_audit > 30:
             self.guard_auditor.invalidate(events if events and "" not in events and not started else ())
         ref = self.cached_reference(root)
+        try:
+            current_snapshot = snapshot(root, ref) if ref else None
+        except (OSError, SafetyError):
+            # Metadata failure must not prevent structural/script checks below.
+            current_snapshot = None
+            events = set(events) | {''}
+        changed = set()
+        if current_snapshot is not None and self.guard_snapshot is not None:
+            previous = {row[0]: row[1:] for row in self.guard_snapshot}
+            changed = {row[0] for row in current_snapshot
+                       if row[0] in ref['files'] and previous.get(row[0]) != row[1:]}
+        if changed:
+            events = set(events) | changed
+            self.guard_auditor.invalidate(changed)
+            self.schedule_background_scan('检测到 Steam 可信文件变化')
+        elif events:
+            self.schedule_background_scan('检测到 Steam 目录变化')
         updating = self.update_state is not None and self.update_state.root == root
         if updating and self.update_state.phase == 'preparing' and processes:
             windows.stop_steam(root)
@@ -246,18 +271,24 @@ class Engine:
         # Hash changes do not excuse semantic tampering just because an update is pending.
         if ref and not high and not updating:
             normalized_events = {n.replace('\\', '/').casefold() for n in events}
-            selected = set(ref["files"]) if session_started else {
+            watch_failed = self.watcher is not None and (
+                self.watcher.error or not self.watcher.thread.is_alive())
+            full_hash = session_started or self.guard_snapshot is None or watch_failed or now - self.last_guard_full_hash >= 60
+            selected = set(ref["files"]) if full_hash else {
                 n for n in ref["files"] if n.replace('\\', '/').casefold() in normalized_events}
             if "" in events:
                 selected = set(ref["files"])
             if selected:
                 current = verify(root, ref, paths=selected)
+                if full_hash:
+                    self.last_guard_full_hash = now
                 if current.state == "mismatch":
                     second = verify(root, ref, paths=selected)
                     if (second.state == "mismatch" and second.mismatches == current.mismatches
                             and local_identity(root)[0] == ref['version']):
                         mismatches = current.mismatches
                         high = [Finding("trusted-file-changed", "confirmed", "已确认同版本可信文件发生修改", tuple(mismatches), "restore")]
+        self.guard_snapshot = current_snapshot
         if high:
             self.contain(root, high, ref, mismatches)
         elif str(root) in self.unresolved and not result.incomplete:
@@ -266,9 +297,27 @@ class Engine:
                 self.unresolved.pop(str(root), None)
                 self.report(checked, [f.message for f in result.findings])
                 self.notify("后台复查通过，已解除此前的 Steam 重启拦截。")
-        if started and not updating:
-            self.log('即时守护检测到 Steam 进程启动，已完成客户端规则复查并安排完整后台校验。')
-            self.commands.put("scan")
+
+    def schedule_background_scan(self, reason):
+        with self.background_lock:
+            if self.background_pending:
+                return
+            self.background_pending = True
+        self.log(f'{reason}，完整后台校验已加入队列；即时文件守护继续运行。')
+
+    def background_scan(self):
+        try:
+            if not self.settings.get('monitor', True) or not self.settings.get('root_confirmed', True):
+                return
+            self.log('后台完整校验开始：检查客户端规则、官方版本及可信文件哈希。')
+            result, _, _ = self.scan()
+            self.log(f'后台完整校验结束：{result.state}，已检查 {result.checked} 个文件')
+        except Exception as error:
+            self.log(f'后台完整校验失败：{error}')
+            raise
+        finally:
+            with self.background_lock:
+                self.background_pending = False
 
     def initialize_worker(self, name):
         try:
@@ -518,12 +567,14 @@ class Engine:
             try:
                 command = self.commands.get(timeout=1)
             except queue.Empty:
-                command = "poll"
+                command = 'background-scan' if self.background_pending else 'poll'
             try:
                 if isinstance(command, tuple) and command[0] == "incident":
                     self.handle_incident(command[1])
                 elif command == "scan":
                     self.scan()
+                elif command == 'background-scan':
+                    self.background_scan()
                 elif command == "launch":
                     self.launch()
                 elif command == "rollback":

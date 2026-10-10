@@ -520,6 +520,121 @@ class SecurityTests(unittest.TestCase):
                 self.assertEqual(getattr(engine, name + '_state'), 'failed')
                 self.assertTrue(any('fixture init failure' in text for text in signals.alert.values))
 
+    def test_startup_scan_survives_immediate_audit_failure(self):
+        from types import SimpleNamespace
+        engine, _ = self.make_engine()
+        engine.settings.update(monitor=True, root_confirmed=True)
+        process = SimpleNamespace(pid=100, create_time=lambda: 1.0, is_running=lambda: True)
+        with patch('sentinel.engine.windows.steam_processes', return_value=[process]), patch.object(engine.guard_auditor, 'audit', side_effect=SafetyError('fixture audit failure')):
+            with self.assertRaises(SafetyError):
+                engine.guard_once(watch=False)
+        self.assertTrue(engine.background_pending)
+        self.assertTrue(engine.commands.empty())
+
+    def test_background_request_is_executed_without_queue_commands(self):
+        from sentinel.core import CheckResult
+        import queue
+        engine, _ = self.make_engine()
+        engine.schedule_background_scan('fixture startup')
+        engine.schedule_background_scan('duplicate startup')
+        def scan():
+            engine.shutdown.set()
+            return CheckResult('clean', '100', checked=3), self.ref, []
+        with patch.object(engine, 'initialize_worker', return_value=True), patch.object(engine.commands, 'get', side_effect=queue.Empty), patch.object(engine, 'scan', side_effect=scan) as call:
+            engine.run()
+        call.assert_called_once()
+        self.assertFalse(engine.background_pending)
+
+    def test_guard_detects_metadata_change_without_notification(self):
+        from types import SimpleNamespace
+        engine, _ = self.make_engine()
+        engine.settings.update(monitor=True, stop_on_mismatch=True)
+        process = SimpleNamespace(pid=100, create_time=lambda: 1.0, is_running=lambda: True)
+        with patch('sentinel.engine.windows.steam_processes', return_value=[process]), patch('sentinel.engine.windows.stop_steam') as stop, patch('sentinel.engine.windows.registry_values', return_value={}):
+            engine.guard_once(watch=False)
+            engine.background_pending = False
+            (self.root / 'steamclient64.dll').write_bytes(b'modified-without-event')
+            engine.last_guard_audit = 0
+            engine.guard_once(watch=False)
+        stop.assert_called_once_with(self.root)
+        self.assertTrue(engine.background_pending)
+
+    def test_failed_watcher_detects_same_metadata_tampering(self):
+        from types import SimpleNamespace
+        import os
+        engine, _ = self.make_engine()
+        engine.settings.update(monitor=True, stop_on_mismatch=True)
+        process = SimpleNamespace(pid=100, create_time=lambda: 1.0, is_running=lambda: True)
+        with patch('sentinel.engine.windows.steam_processes', return_value=[process]), patch('sentinel.engine.windows.stop_steam') as stop, patch('sentinel.engine.windows.registry_values', return_value={}):
+            engine.guard_once(watch=False)
+            engine.watcher = SimpleNamespace(error='fixture watcher failure', thread=SimpleNamespace(is_alive=lambda: False), drain=lambda: set())
+            target = self.root / 'steamclient64.dll'
+            old = target.stat()
+            target.write_bytes(b'X' * old.st_size)
+            os.utime(target, ns=(old.st_atime_ns, old.st_mtime_ns))
+            engine.last_guard_audit = 0
+            engine.guard_once(watch=False)
+        stop.assert_called_once_with(self.root)
+
+    def test_periodic_guard_hash_covers_lost_same_metadata_event(self):
+        from types import SimpleNamespace
+        import os, time
+        engine, _ = self.make_engine()
+        engine.settings.update(monitor=True, stop_on_mismatch=True)
+        process = SimpleNamespace(pid=100, create_time=lambda: 1.0, is_running=lambda: True)
+        with patch('sentinel.engine.windows.steam_processes', return_value=[process]), patch('sentinel.engine.windows.stop_steam') as stop, patch('sentinel.engine.windows.registry_values', return_value={}):
+            engine.guard_once(watch=False)
+            target = self.root / 'steamclient64.dll'
+            old = target.stat()
+            target.write_bytes(b'X' * old.st_size)
+            os.utime(target, ns=(old.st_atime_ns, old.st_mtime_ns))
+            engine.last_guard_full_hash = time.monotonic() - 61
+            engine.last_guard_audit = 0
+            engine.guard_once(watch=False)
+        stop.assert_called_once_with(self.root)
+
+    def test_real_fixture_process_launch_and_file_change_are_detected(self):
+        import subprocess, time
+        from sentinel import windows
+        compiler = Path(r'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe')
+        source = Path(__file__).with_name('SteamProcessFixture.cs')
+        executable = self.root / 'steam.exe'
+        subprocess.run([str(compiler), '/nologo', '/target:winexe', '/platform:x64', '/out:' + str(executable), str(source)], check=True, capture_output=True)
+        self.ref['files']['steam.exe'].update(sha256=sha256(executable), size=executable.stat().st_size)
+        (self.root / 'package/steam_client_win64').write_text('cached metadata')
+        self.client.manifest = lambda: self.ref
+        engine, signals = self.make_engine()
+        engine.settings.update(monitor=True, root_confirmed=True, stop_on_mismatch=True, auto_repair=False)
+        engine.guard_once(watch=True)
+        self.assertTrue(engine.watcher.ready.wait(3))
+        self.assertIsNone(engine.watcher.error)
+        process = subprocess.Popen([str(executable)], cwd=self.root)
+        try:
+            deadline = time.monotonic() + 5
+            while time.monotonic() < deadline and not windows.steam_processes(self.root):
+                time.sleep(0.05)
+            self.assertTrue(any(p.pid == process.pid for p in windows.steam_processes(self.root)))
+            engine.guard_once(watch=True)
+            self.assertTrue(engine.background_pending)
+            engine.background_scan()
+            self.assertEqual(engine.last_result.state, 'clean')
+            self.assertTrue(any('后台完整校验结束' in text for text in signals.log.values))
+            (self.root / 'steamclient64.dll').write_bytes(b'modified after clean scan')
+            deadline = time.monotonic() + 5
+            while time.monotonic() < deadline and process.poll() is None:
+                engine.guard_once(watch=True)
+                time.sleep(0.05)
+            self.assertIsNotNone(process.poll(), 'Owned fixture process was not stopped after real file change')
+            command, payload = engine.commands.get_nowait()
+            self.assertEqual(command, 'incident')
+            self.assertIn('steamclient64.dll', payload['mismatches'])
+        finally:
+            if process.poll() is None:
+                process.terminate()
+            process.wait(timeout=5)
+            engine.watcher.closed.set()
+            engine.watcher.thread.join(2)
+
     def test_guard_holds_relaunch_during_repair(self):
         from types import SimpleNamespace
         engine, _ = self.make_engine()

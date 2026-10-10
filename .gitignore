@@ -1,0 +1,17 @@
+.venv/
+.release-keys/
+.build-cache/
+.reference/
+build/
+dist/
+__pycache__/
+test-output/
+*.spec
+
+*.pyc
+*.pfx
+*.pem
+*.key
+*.password
+startup-error.txt
+research/

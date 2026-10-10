@@ -1,0 +1,2722 @@
+{
+  "payload": {
+    "version": "1788652215",
+    "platform": "win64",
+    "channel": "stable",
+    "packages": {
+      "bins_win64": {
+        "file": "bins_win64.zip.36f5d9202e79ab2aa3e3c5902e84bbd799d31fc0",
+        "sha256": "93f5b6bea0267fd85dc8cc823fdab5c5fb55d7f3a1deab0598acefef0e133bce",
+        "size": 63700191
+      },
+      "bins_cef_win64": {
+        "file": "bins_cef_win64.zip.0bad5abe29375d80e5bb0eedf714329369140164",
+        "sha256": "e5e660226cc586c3cbc9a225f92e041664f228f83ef210574e39967c82c691cc",
+        "size": 148403590
+      },
+      "bins_webhelpers_win64": {
+        "file": "bins_webhelpers_win64.zip.b52cf5175007a1bd1ac619024f1cd31286c8da21",
+        "sha256": "7ca680c1eb22789c990470c2be80489de3122e8b7f198155515f8b84683e723b",
+        "size": 3673293
+      },
+      "steam_win64": {
+        "file": "steam_win64.zip.6f024698857e81681cf673422a8c1a4d06e2be7f",
+        "sha256": "5dbc39918056cc8b7815daaa181eb3fa19a264b25dab33f3d1ad631b79ee3bb8",
+        "size": 2668385
+      },
+      "bins_hardware_win64": {
+        "file": "bins_hardware_win64.zip.827a01a60b8b7fd6c3df0f00c938f6c97b03276b",
+        "sha256": "0c6dbf35a61502b59da0477e09aa212b0acf0ef542815eb5f357feb264dadc62",
+        "size": 8537645
+      },
+      "steamui_websrc_all": {
+        "file": "steamui_websrc_all.zip.d57af3a7bc6e1d54ca67e721a41d263befa5125c",
+        "sha256": "791e7069a239ffb07366193b17ed93fe9c3b6e131fd766c505e3a7029e9c5f57",
+        "size": 33250084
+      },
+      "bins_codecs_win64": {
+        "file": "bins_codecs_win64.zip.9edc714e8a6f8c2881ac0cfdc2af382070e42c2e",
+        "sha256": "5a32e6966666f6246acd2c92b98f1eee52e717d9085fe901c8825df77da48ffb",
+        "size": 12705333
+      },
+      "bins_hardware_all": {
+        "file": "bins_hardware_all.zip.0f397d26ddd470318a9dfd8ba019f6e64bb53875",
+        "sha256": "c90da4bd9e6dc122317f54887633839e22871974656fd0c337c60b44522ff2b3",
+        "size": 374820
+      },
+      "bins_misc_win64": {
+        "file": "bins_misc_win64.zip.6c9d390b1f4fff2afdad5b713e420894b8825e2c",
+        "sha256": "0e3988c829bd00287d60ee5346bc4185f29ef709b02bde72c40eff843858fcac",
+        "size": 16927240
+      }
+    },
+    "files": {
+      "bin/cef/cef.win64/vkicd_mock_icd.dll": {
+        "sha256": "0a8a23d218f6c9ac0be55a512383b690445cfaa583bfaedf148e6c6d7a0f39f6",
+        "size": 637080,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/VkICD_mock_icd.dll"
+      },
+      "bin/cef/cef.win64/vklayer_khronos_validation.dll": {
+        "sha256": "657220496ec5efbacc8e8cdcd86e5c4ddfe98f40c33b59f3e32912a4e9d4b6f5",
+        "size": 16662680,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/VkLayer_khronos_validation.dll"
+      },
+      "bin/cef/cef.win64/chrome_elf.dll": {
+        "sha256": "6358830f96f36efa7516b3277cf69c1f132f97d4d93c365ccf061a7cf11e1e39",
+        "size": 1405592,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/chrome_elf.dll"
+      },
+      "bin/cef/cef.win64/d3dcompiler_47.dll": {
+        "sha256": "1ef634e349f1224a81309ad9eee8392b9acac9c3f31f87b0b77b8368397d7079",
+        "size": 4918424,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/d3dcompiler_47.dll"
+      },
+      "bin/cef/cef.win64/dbgcore.dll": {
+        "sha256": "17e8f6b0a661b1e80813812973ca1fe591b05d68f896d4afa1edbc0dec04d991",
+        "size": 216216,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/dbgcore.dll"
+      },
+      "bin/cef/cef.win64/dxcompiler.dll": {
+        "sha256": "f90e9f134aaa609c61ee4e4198687ad981e35db3e0c758c02eb49149ec38dffb",
+        "size": 22065304,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/dxcompiler.dll"
+      },
+      "bin/cef/cef.win64/dxil.dll": {
+        "sha256": "ab9598a3c0cf21726284832418d63d804d116533c0c17eced14f2180d8cb46bf",
+        "size": 1510040,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/dxil.dll"
+      },
+      "bin/cef/cef.win64/eventlog_provider.dll": {
+        "sha256": "46948c6b358cb2f5937b0be277bdda8044f62e4681b70512c2cc6fb06caabcc5",
+        "size": 18072,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/eventlog_provider.dll"
+      },
+      "bin/cef/cef.win64/libegl.dll": {
+        "sha256": "f08eb4443498e35a527ef8cac4ab835f801538a019985f3d75043f784ac4329a",
+        "size": 483992,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/libEGL.dll"
+      },
+      "bin/cef/cef.win64/libglesv2.dll": {
+        "sha256": "ed8394fa69f8f816e0b392353c178680e0a221fefd0b54c58a61af033fdf9b1f",
+        "size": 8089752,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/libGLESv2.dll"
+      },
+      "bin/cef/cef.win64/libcef.dll": {
+        "sha256": "c85bf94462b3c79baeac63823db52d15e116eead71ea414e5d3a112c59e434d3",
+        "size": 219859608,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/libcef.dll"
+      },
+      "bin/cef/cef.win64/msdia140.dll": {
+        "sha256": "40ce0db2df7b2a14b5948e269dcdbe7f395f8fef6685bee1354cb3650e8d88d5",
+        "size": 2294424,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/msdia140.dll"
+      },
+      "bin/cef/cef.win64/msvcp140.dll": {
+        "sha256": "0252b3f087712b7fe1ddb3aeb4c391747446cd1a421ffd03ba460fe643e1c48b",
+        "size": 548504,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/msvcp140.dll"
+      },
+      "bin/cef/cef.win64/vccorlib140.dll": {
+        "sha256": "f2f35a01d82e7ec644e73cda3d8118dfe0812029d8a346ff7cc38208ff3a5c85",
+        "size": 343192,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/vccorlib140.dll"
+      },
+      "bin/cef/cef.win64/vcruntime140.dll": {
+        "sha256": "7f6d96ae6d9324ce0675d13a89d7bdc26e14a7301e79494ad42c5c30d1eb0596",
+        "size": 115352,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/vcruntime140.dll"
+      },
+      "bin/cef/cef.win64/vcruntime140_1.dll": {
+        "sha256": "9173b9ed8fd952985ca8568101e931cbfeb85915a963955c78c2af4277daa16c",
+        "size": 40600,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/vcruntime140_1.dll"
+      },
+      "bin/cef/cef.win64/vk_swiftshader.dll": {
+        "sha256": "084034e8fcab0252046881aa8134c52d48ada4e73818fed825d2cf930bb6ebd5",
+        "size": 5307032,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/vk_swiftshader.dll"
+      },
+      "bin/cef/cef.win64/vulkan-1.dll": {
+        "sha256": "8aefffb2e6ee592cf2a3b94408a1854f45952d24da4f9e89535a517385941696",
+        "size": 963736,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/vulkan-1.dll"
+      },
+      "bin/cef/cef.win64/winh264.dll": {
+        "sha256": "80ce8eec4c5ced50cc51766909302f274b7f846965103f20a5c1e31a59d53d23",
+        "size": 173344,
+        "package": "bins_cef_win64",
+        "member": "bin/cef/cef.win64/winh264.dll"
+      },
+      "aom.dll": {
+        "sha256": "78f66ef0fcba2aca68e50edcbff3c50491fbc174e8ecce2a52132d945f4dd200",
+        "size": 9637528,
+        "package": "bins_codecs_win64",
+        "member": "aom.dll"
+      },
+      "dav1d.dll": {
+        "sha256": "36a8df37407ecce2ca1aecbbaafad774b7ff0fbf06386f4ecb56a5b74c8859e9",
+        "size": 2896688,
+        "package": "bins_codecs_win64",
+        "member": "dav1d.dll"
+      },
+      "libavcodec-62.dll": {
+        "sha256": "59cd1cab28cc8cbffd0b6cf0afc7c2b00ee650c3d25eaa2847347c7fe3188305",
+        "size": 7525016,
+        "package": "bins_codecs_win64",
+        "member": "libavcodec-62.dll"
+      },
+      "libavfilter-11.dll": {
+        "sha256": "2d97b666632dde8c8f29ce55999e77318c5852cfb88564f6c39ee5d3c651a790",
+        "size": 1077912,
+        "package": "bins_codecs_win64",
+        "member": "libavfilter-11.dll"
+      },
+      "libavformat-62.dll": {
+        "sha256": "3f2bfa0c595523aca218d00302a7ba6be2b2123ad3f777c5bb04dd2d9497426a",
+        "size": 2323096,
+        "package": "bins_codecs_win64",
+        "member": "libavformat-62.dll"
+      },
+      "libavif-16.dll": {
+        "sha256": "858624061d7cb14c2801ec64af698537a1bf16ba337e2dd989f235c50b9745ba",
+        "size": 903832,
+        "package": "bins_codecs_win64",
+        "member": "libavif-16.dll"
+      },
+      "libavutil-60.dll": {
+        "sha256": "93c6c86eb17cf92d0c18a93f55fef2904142f9bcfbd97278052e6ebc0a71fa4b",
+        "size": 2371736,
+        "package": "bins_codecs_win64",
+        "member": "libavutil-60.dll"
+      },
+      "libpyrowave-shared-0.dll": {
+        "sha256": "9a5641669a35ef320bc8c8c59ef44ed6f57d783d5f64dd4bf3382e435cc553f9",
+        "size": 2291712,
+        "package": "bins_codecs_win64",
+        "member": "libpyrowave-shared-0.dll"
+      },
+      "libswresample-6.dll": {
+        "sha256": "d9f663184904ad342c2f4a28b8f5d431856f24b32a5c83b231759c75ed38dcd6",
+        "size": 824984,
+        "package": "bins_codecs_win64",
+        "member": "libswresample-6.dll"
+      },
+      "libswscale-9.dll": {
+        "sha256": "e54dbe70f94dd1a4b66c75270a6641c03b2174be0ecd345843316ab080dad70a",
+        "size": 2310296,
+        "package": "bins_codecs_win64",
+        "member": "libswscale-9.dll"
+      },
+      "bin/hardwareupdater/hardwareupdater.exe": {
+        "sha256": "af546b4d2440c6133f78d3bacebc304cd73531ea8806fc4fe996d165d8929722",
+        "size": 8718056,
+        "package": "bins_hardware_win64",
+        "member": "bin/hardwareupdater/hardwareupdater.exe"
+      },
+      "cserhelper.dll": {
+        "sha256": "09d4c2067217b1900d4d7a936969f809821649b10ed8afd0f49de2871f7a3784",
+        "size": 124440,
+        "package": "bins_misc_win64",
+        "member": "CSERHelper.dll"
+      },
+      "gfnruntimesdk.dll": {
+        "sha256": "78fc4bce302745a4851ce32f33e81c17d09c679a291fc4b4d7862c7b15f56e33",
+        "size": 2579656,
+        "package": "bins_misc_win64",
+        "member": "GfnRuntimeSdk.dll"
+      },
+      "sdl3_image.dll": {
+        "sha256": "19f552e73fd436c1dff153240d17ab6a02a9bb55625ed3795c660749b885e43c",
+        "size": 948888,
+        "package": "bins_misc_win64",
+        "member": "SDL3_image.dll"
+      },
+      "sdl3_ttf.dll": {
+        "sha256": "15ae54107a93d5b6dbc153eef238ad4749d5fd2d7d3b2a86705380990c5c0bde",
+        "size": 3468952,
+        "package": "bins_misc_win64",
+        "member": "SDL3_ttf.dll"
+      },
+      "steam2.dll": {
+        "sha256": "4d46e343e004c470efe28b81aa1e8f9f27b2c730790c7da3053ee0dc412c26ff",
+        "size": 2882984,
+        "package": "bins_misc_win64",
+        "member": "Steam2.dll"
+      },
+      "writeminidump.exe": {
+        "sha256": "f29c7a4a0d45c020a0cb93db1147cb81e913ef83b4e840cbba7c87b2da3a363b",
+        "size": 284456,
+        "package": "bins_misc_win64",
+        "member": "WriteMiniDump.exe"
+      },
+      "bin/cpuidsdk.dll": {
+        "sha256": "2c74ce7eae980c664760f0b0cf5e9852de9823e8a7b9dcdb4f6c30a5015755e8",
+        "size": 3583360,
+        "package": "bins_misc_win64",
+        "member": "bin/cpuidsdk.dll"
+      },
+      "bin/gldriverquery.exe": {
+        "sha256": "0d422efdfa17dc6e1ebf0ed9e2902fd7c0eaa2f77b8a5a8f1df1478453a37ab8",
+        "size": 46880,
+        "package": "bins_misc_win64",
+        "member": "bin/gldriverquery.exe"
+      },
+      "bin/gldriverquery64.exe": {
+        "sha256": "23b4063251315814e188d64afe08ea49979f5fb2b74b86860e655a1a4d8fe4e3",
+        "size": 963872,
+        "package": "bins_misc_win64",
+        "member": "bin/gldriverquery64.exe"
+      },
+      "bin/mss32.dll": {
+        "sha256": "9c832318a05290ebef3bd809cbbc7df70a08cbd86745899eaeb169d5a42bf99d",
+        "size": 440320,
+        "package": "bins_misc_win64",
+        "member": "bin/mss32.dll"
+      },
+      "bin/mss64.dll": {
+        "sha256": "ee1817182899a40797d041b947da127b83fb26b646a03b25e5744b1d5b19198c",
+        "size": 486912,
+        "package": "bins_misc_win64",
+        "member": "bin/mss64.dll"
+      },
+      "bin/xinput1_3.dll": {
+        "sha256": "cc42da948da5be1186ed92265f2b5dd895795ac9ed264efe822b242946ad9f39",
+        "size": 68888,
+        "package": "bins_misc_win64",
+        "member": "bin/xinput1_3.dll"
+      },
+      "bin/xpad.dll": {
+        "sha256": "cc42da948da5be1186ed92265f2b5dd895795ac9ed264efe822b242946ad9f39",
+        "size": 68888,
+        "package": "bins_misc_win64",
+        "member": "bin/xpad.dll"
+      },
+      "d3dcompiler_46.dll": {
+        "sha256": "996e5b57c06b5614ee7b26936b29bace62218fb3cad3a28dba9e72bcc66d2698",
+        "size": 3231696,
+        "package": "bins_misc_win64",
+        "member": "d3dcompiler_46.dll"
+      },
+      "d3dcompiler_46_64.dll": {
+        "sha256": "9614de7bac24091e2abaf70b3c852ddf9b92a48157c557c3c63d81d88d4d5ceb",
+        "size": 3873264,
+        "package": "bins_misc_win64",
+        "member": "d3dcompiler_46_64.dll"
+      },
+      "libusb-1.0.dll": {
+        "sha256": "c4af4813975849213e2c3d0067929769c2873e7105aac340da66c75cb12ba3cc",
+        "size": 328344,
+        "package": "bins_misc_win64",
+        "member": "libusb-1.0.dll"
+      },
+      "openvr_api.dll": {
+        "sha256": "e61701f75930b4c47615d17f5901ca62edf1a948f5ea804d4cbbdc94ad2e6e2e",
+        "size": 836760,
+        "package": "bins_misc_win64",
+        "member": "openvr_api.dll"
+      },
+      "steamwebrtc.dll": {
+        "sha256": "d4aa1c8c133c9de196233b0355b478d6350574d4286020aca395d925b7474f8d",
+        "size": 4769640,
+        "package": "bins_misc_win64",
+        "member": "steamwebrtc.dll"
+      },
+      "steamwebrtc64.dll": {
+        "sha256": "206a621d4716de11dc9375c6f7d4a09befe68a5be794ca716c85bd78017439ae",
+        "size": 13035368,
+        "package": "bins_misc_win64",
+        "member": "steamwebrtc64.dll"
+      },
+      "bin/cef/cef.win64/steamwebhelper.exe": {
+        "sha256": "f9ee1d1cc0f06fad16c9a277136a2e1b00b6b668901e28454a7dd8af29afde0d",
+        "size": 7488152,
+        "package": "bins_webhelpers_win64",
+        "member": "bin/cef/cef.win64/steamwebhelper.exe"
+      },
+      "bin/cef/cef.win64/tier0_s64.dll": {
+        "sha256": "30f7bb8d9b86006852493c26124ba253bd9e7ffd40a8b3c7254f86a9032c3be3",
+        "size": 900760,
+        "package": "bins_webhelpers_win64",
+        "member": "bin/cef/cef.win64/tier0_s64.dll"
+      },
+      "bin/cef/cef.win64/vstdlib_s64.dll": {
+        "sha256": "99efb4c2ad47f90c803b5ee0bd6424916b28facb9fa2568845b1b1f58a36062a",
+        "size": 487576,
+        "package": "bins_webhelpers_win64",
+        "member": "bin/cef/cef.win64/vstdlib_s64.dll"
+      },
+      "gameoverlayrenderer.dll": {
+        "sha256": "f597006f068fc84ca0c6db91691178a4ac5e39e291adb5fc2a3903e71b7d2ac1",
+        "size": 1347224,
+        "package": "bins_win64",
+        "member": "GameOverlayRenderer.dll"
+      },
+      "gameoverlayrenderer64.dll": {
+        "sha256": "59057f983ae6f02b7eb2495bf65e0430129dd81dff8d9628c764bd1a07e23fee",
+        "size": 1576600,
+        "package": "bins_win64",
+        "member": "GameOverlayRenderer64.dll"
+      },
+      "sdl3.dll": {
+        "sha256": "e453238bb31d593a87e7de87f1f5985fa11d2f9ed12a83fc65c9a52857a30118",
+        "size": 3082904,
+        "package": "bins_win64",
+        "member": "SDL3.dll"
+      },
+      "steam.dll": {
+        "sha256": "f2ad0ac8ad626619b7a88dddea66caa312d29d656b2a7ff19116013d72261d3a",
+        "size": 545944,
+        "package": "bins_win64",
+        "member": "Steam.dll"
+      },
+      "steamoverlayvulkanlayer.dll": {
+        "sha256": "3a3fda8f22f1b277059d885bf504345344e51f39f8c3e6676b6a9c881dad2d26",
+        "size": 271512,
+        "package": "bins_win64",
+        "member": "SteamOverlayVulkanLayer.dll"
+      },
+      "steamoverlayvulkanlayer64.dll": {
+        "sha256": "9ebe3d8c3fa68c45a721c38b75cdd32afba71385ab3092dedbe553146ac77fdf",
+        "size": 318104,
+        "package": "bins_win64",
+        "member": "SteamOverlayVulkanLayer64.dll"
+      },
+      "steamui.dll": {
+        "sha256": "cb387adefbbac64a3c1490d4275d00daf3a1e0219b4580726ef7681db7429278",
+        "size": 18962584,
+        "package": "bins_win64",
+        "member": "SteamUI.dll"
+      },
+      "vklayer_steam_fossilize.dll": {
+        "sha256": "f9cd250f458908e27ab56880a1f0ce4e0682b69367899a3dbae77eb26044ae60",
+        "size": 545944,
+        "package": "bins_win64",
+        "member": "VkLayer_steam_fossilize.dll"
+      },
+      "vklayer_steam_fossilize64.dll": {
+        "sha256": "5b85a2baa17f4eea8956e7f240028f65697b79071836e4bee73f3244371e0fdd",
+        "size": 640152,
+        "package": "bins_win64",
+        "member": "VkLayer_steam_fossilize64.dll"
+      },
+      "bin/steamservice.dll": {
+        "sha256": "feaec497b4ba572cd1a9d4ba9c4dd9e1952d3d9c71e50476103f76b2bbff7a82",
+        "size": 3747992,
+        "package": "bins_win64",
+        "member": "bin/SteamService.dll"
+      },
+      "bin/steamservice.exe": {
+        "sha256": "6c451a0cddaf71816c09e268237f8226fe32dfc1e36ce0229c5b1f425fdc8b62",
+        "size": 2962584,
+        "package": "bins_win64",
+        "member": "bin/SteamService.exe"
+      },
+      "bin/audio.dll": {
+        "sha256": "6e7e8aa31f0dff94c2594f2381386e1d9c2481afb2c1db91ba3ec3c4d7bfa583",
+        "size": 196760,
+        "package": "bins_win64",
+        "member": "bin/audio.dll"
+      },
+      "bin/audio64.dll": {
+        "sha256": "9c78057628d892160c373936b2a8eaafa3897d3ad5e12762176b28b514970bfd",
+        "size": 258200,
+        "package": "bins_win64",
+        "member": "bin/audio64.dll"
+      },
+      "bin/chromehtml.dll": {
+        "sha256": "801849f46eda2b405f722af36b8bc9eb99e7aa4c9b79528acb7e3ce4033e4fbb",
+        "size": 1667224,
+        "package": "bins_win64",
+        "member": "bin/chromehtml.dll"
+      },
+      "bin/drivers.exe": {
+        "sha256": "06099ff2cd3c07315e1d47d1e6c1bb7caa6166c079af2265674f0dce3a2e8294",
+        "size": 7495864,
+        "package": "bins_win64",
+        "member": "bin/drivers.exe"
+      },
+      "bin/filesystem_stdio.dll": {
+        "sha256": "d551f864ef465b4632ee2943b649157bc1f8b150da928022bdd4943779b13d95",
+        "size": 264344,
+        "package": "bins_win64",
+        "member": "bin/filesystem_stdio.dll"
+      },
+      "bin/fossilize-replay.exe": {
+        "sha256": "90e88ea82ee2115770b90d270c999c34c60f7047ab1c07aca7f52f09cee960eb",
+        "size": 2001048,
+        "package": "bins_win64",
+        "member": "bin/fossilize-replay.exe"
+      },
+      "bin/fossilize-replay64.exe": {
+        "sha256": "fe877e429e8ab73a3d2821dbb1efc6e5c2721ed8e8ead5d2d55684cfe35c18b7",
+        "size": 2485400,
+        "package": "bins_win64",
+        "member": "bin/fossilize-replay64.exe"
+      },
+      "bin/friendsui.dll": {
+        "sha256": "96597f6e094533aecd0408f2e3454887f33cf42ddd1616efcfa50cf55b5bc39f",
+        "size": 3328664,
+        "package": "bins_win64",
+        "member": "bin/friendsui.dll"
+      },
+      "bin/gameoverlayui.dll": {
+        "sha256": "594fe04b2d624dc48f4a8aaaa20d78caec397523a7b5915f3c37802cd2e7dec4",
+        "size": 5776536,
+        "package": "bins_win64",
+        "member": "bin/gameoverlayui.dll"
+      },
+      "bin/nattypeprobe.dll": {
+        "sha256": "b64cf0614a02d6df203194a305da335e416816613c4a5386959191fcad7dacbb",
+        "size": 171160,
+        "package": "bins_win64",
+        "member": "bin/nattypeprobe.dll"
+      },
+      "bin/secure_desktop_capture.exe": {
+        "sha256": "c533d27c7f93961f42a6b929040d069cf02c63c73e57fbfa7d8eb4167a9adb85",
+        "size": 3867800,
+        "package": "bins_win64",
+        "member": "bin/secure_desktop_capture.exe"
+      },
+      "bin/steam_monitor.exe": {
+        "sha256": "d303f3ff6688e6ab905da9ca217d30c1e6bad13e2b2ce481cd040fe7841972ef",
+        "size": 678552,
+        "package": "bins_win64",
+        "member": "bin/steam_monitor.exe"
+      },
+      "bin/steamxboxutil.exe": {
+        "sha256": "cf6781002cb666492f1d3b5c44277d7e81e4c4c637c604f923f5e7a542d4215c",
+        "size": 645272,
+        "package": "bins_win64",
+        "member": "bin/steamxboxutil.exe"
+      },
+      "bin/steamxboxutil64.exe": {
+        "sha256": "4a09ae928c12cb291bd23e1dc4700f69462f64416fc4d05a48092cb4554a25f5",
+        "size": 769176,
+        "package": "bins_win64",
+        "member": "bin/steamxboxutil64.exe"
+      },
+      "bin/vgui2_s.dll": {
+        "sha256": "5c47ddabf2dd087d7bcc35ca558759e45f1c83fe874f122ec168a041e8e502f5",
+        "size": 4157592,
+        "package": "bins_win64",
+        "member": "bin/vgui2_s.dll"
+      },
+      "bin/vulkandriverquery.exe": {
+        "sha256": "0b73d09bfc15dedf5d4f2b71d031af462773ef1e873a550263d36ceb1f1d8869",
+        "size": 168600,
+        "package": "bins_win64",
+        "member": "bin/vulkandriverquery.exe"
+      },
+      "bin/vulkandriverquery64.exe": {
+        "sha256": "ebc2b845c47bd6b1f19aa61148df79af0e55368b397edd873f75a73c7c9f7178",
+        "size": 210584,
+        "package": "bins_win64",
+        "member": "bin/vulkandriverquery64.exe"
+      },
+      "bin/x64launcher.exe": {
+        "sha256": "b0518c0b961400cb3520f6ee323fe34633f7df65399b78d6695201cb4b28e14f",
+        "size": 423064,
+        "package": "bins_win64",
+        "member": "bin/x64launcher.exe"
+      },
+      "bin/x86launcher.exe": {
+        "sha256": "5bdf11b6e05459a8f21d2e12b5df0c23fb01f7e45abb51fec2a9393a7e51f18f",
+        "size": 402584,
+        "package": "bins_win64",
+        "member": "bin/x86launcher.exe"
+      },
+      "crashhandler.dll": {
+        "sha256": "52c97930f1106e08fe89909ba817992de43949ed3aaaeeec133e34d79748320c",
+        "size": 409752,
+        "package": "bins_win64",
+        "member": "crashhandler.dll"
+      },
+      "crashhandler64.dll": {
+        "sha256": "8b501830a276920a8b77935489a2603d38418f71e3569aa72e12a1553d959bcb",
+        "size": 496792,
+        "package": "bins_win64",
+        "member": "crashhandler64.dll"
+      },
+      "gameoverlayui64.exe": {
+        "sha256": "9aa1fa1b7c0b23610bc9aed9974fb4c55d0580ef1afd2a6f49830be934e68b07",
+        "size": 417432,
+        "package": "bins_win64",
+        "member": "gameoverlayui64.exe"
+      },
+      "steamclient.dll": {
+        "sha256": "e9e961c914a418b6a3c597822bdc920bdea62c842ff42de23dc306331da563f8",
+        "size": 21377688,
+        "package": "bins_win64",
+        "member": "steamclient.dll"
+      },
+      "steamclient64.dll": {
+        "sha256": "caba4826aa3501039d095aee1843a6bfb270fb43a3ab4455b2d6733223579fee",
+        "size": 26328216,
+        "package": "bins_win64",
+        "member": "steamclient64.dll"
+      },
+      "steamerrorreporter.exe": {
+        "sha256": "d3b3410479139d0d0dfac0d8dfa4fb21a3da071bd4f9b8c8325f1a03ff48d237",
+        "size": 707224,
+        "package": "bins_win64",
+        "member": "steamerrorreporter.exe"
+      },
+      "steamerrorreporter64.exe": {
+        "sha256": "3a66b1c4f11915698a4bca6038c9c08dcf291d28eb615979ab80eb70a829eca5",
+        "size": 794776,
+        "package": "bins_win64",
+        "member": "steamerrorreporter64.exe"
+      },
+      "steamsysinfo.exe": {
+        "sha256": "907ca4dbc4736ce61798021a7b1d0f4579d8165c8a4124c1db2a18b5dbc92f71",
+        "size": 1418392,
+        "package": "bins_win64",
+        "member": "steamsysinfo.exe"
+      },
+      "streaming_client.exe": {
+        "sha256": "907199578566f1973466d218c9c36d8c57ab5bfd84e4041729e195db3a03c4b3",
+        "size": 11202712,
+        "package": "bins_win64",
+        "member": "streaming_client.exe"
+      },
+      "tier0_s.dll": {
+        "sha256": "562b2b47b7a724daa846c2a265b1129b590b28812b84e939068d0730a7815133",
+        "size": 355992,
+        "package": "bins_win64",
+        "member": "tier0_s.dll"
+      },
+      "tier0_s64.dll": {
+        "sha256": "30f7bb8d9b86006852493c26124ba253bd9e7ffd40a8b3c7254f86a9032c3be3",
+        "size": 900760,
+        "package": "bins_win64",
+        "member": "tier0_s64.dll"
+      },
+      "video.dll": {
+        "sha256": "1cfe47867149391ed250e02eb063dd96070af250e03a97a3241e7caef094f9ac",
+        "size": 4252824,
+        "package": "bins_win64",
+        "member": "video.dll"
+      },
+      "video64.dll": {
+        "sha256": "d5b40072bf91ffb22cc6ebbf59b7b13241d4a02845329f0a4d44453381106fe5",
+        "size": 5337752,
+        "package": "bins_win64",
+        "member": "video64.dll"
+      },
+      "vstdlib_s.dll": {
+        "sha256": "1d8872989be4bfa482ffe6c1c0221221c37957ac9e1a099000e92810c808a510",
+        "size": 607896,
+        "package": "bins_win64",
+        "member": "vstdlib_s.dll"
+      },
+      "vstdlib_s64.dll": {
+        "sha256": "99efb4c2ad47f90c803b5ee0bd6424916b28facb9fa2568845b1b1f58a36062a",
+        "size": 487576,
+        "package": "bins_win64",
+        "member": "vstdlib_s64.dll"
+      },
+      "steam.exe": {
+        "sha256": "48ea0576865d2dfda26001b7b210c3f7559d46e647424cd11704eb1ea842fe5a",
+        "size": 5775512,
+        "package": "steam_win64",
+        "member": "steam.exe"
+      },
+      "steamui/1133.js": {
+        "sha256": "c3fd585ca8b634c176cae2244ef8187b7331df6c7f38e598f25e87f261f7e6a6",
+        "size": 7999,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1133.js"
+      },
+      "steamui/1139.js": {
+        "sha256": "f482efd4661b2fdd4dfd198b7323fb8248f93e6842d97981770bc865f0f5afe0",
+        "size": 1351,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1139.js"
+      },
+      "steamui/1242.js": {
+        "sha256": "e547896df0c1ca1df9a20ecd3386866411990cd5dc979303c3665bee58f195a1",
+        "size": 3355,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1242.js"
+      },
+      "steamui/1325.js": {
+        "sha256": "bb68c69cfc8dc62b12285659a6cf9a89a3fdb78ad02f0f1a9029ed87b683c060",
+        "size": 1759,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1325.js"
+      },
+      "steamui/1391.js": {
+        "sha256": "7a972b9bb8e30a2ae9c6793899f56a1707893d310a3a70450f8c6d4bd401af35",
+        "size": 5300,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1391.js"
+      },
+      "steamui/1502.js": {
+        "sha256": "46047ddcd65ab17a8ec0a4f30c0375337b7232552911de3a2370239a42655960",
+        "size": 5264,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1502.js"
+      },
+      "steamui/1545.js": {
+        "sha256": "da2de9c4f160e8f8e15a14a7e9b219b420cbdd08bb2767bb1bd8640b231c459a",
+        "size": 12077,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1545.js"
+      },
+      "steamui/1547.js": {
+        "sha256": "7f82b751f3fbf8e4ec64c3ba28d558f58a00bbb2dcb7efddf59b7f91715ce5c8",
+        "size": 1411,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1547.js"
+      },
+      "steamui/1548.js": {
+        "sha256": "7180a3057f6b13269aaef3003a2fe5de8e32814c322b3bc7bc499f74bf738fca",
+        "size": 1319,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1548.js"
+      },
+      "steamui/1549.js": {
+        "sha256": "e4b8600d2184367bd096f088beddf343efc42dea400541e1fdb2957d56f9b487",
+        "size": 5330,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1549.js"
+      },
+      "steamui/1651.js": {
+        "sha256": "e6f4021186f548d95e48f5c9cab0a81120abb305c1d3b37862b9b145c84c0841",
+        "size": 9273,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1651.js"
+      },
+      "steamui/1663.js": {
+        "sha256": "8b983f2727586757aa3ebd53ba196197dccea590026733ccb7788e745ec16891",
+        "size": 5593,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1663.js"
+      },
+      "steamui/1709.js": {
+        "sha256": "6c132af3785f0fa59dd2c0eb8c9e813d982a7517126e0b4bdaad3c7137fe4155",
+        "size": 5600,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1709.js"
+      },
+      "steamui/1792.js": {
+        "sha256": "4d6b71eb93bd3da6a54cbb9ce499568f8b8f8a30923eded14df85dfd586eacfa",
+        "size": 3812,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1792.js"
+      },
+      "steamui/1800.js": {
+        "sha256": "110ec82299945f594e4c3482b702385fc3feeba85e68b5e6587c38e59e0138c9",
+        "size": 8046,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1800.js"
+      },
+      "steamui/1917.js": {
+        "sha256": "bad161b88dd17e17d1e720c4a7682b864671c8cfbd053666ffb72a3f4b841010",
+        "size": 9185,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1917.js"
+      },
+      "steamui/1922.js": {
+        "sha256": "4c7117a5406735f74c6e0c8728d9b076b2f9b0c7dee89c5143aa9fe2cf8ee230",
+        "size": 11518,
+        "package": "steamui_websrc_all",
+        "member": "steamui/1922.js"
+      },
+      "steamui/195.js": {
+        "sha256": "d10017e43175581e82a699661d28f47391633dfe183e2dfe49bd59f91ef3edf3",
+        "size": 9651,
+        "package": "steamui_websrc_all",
+        "member": "steamui/195.js"
+      },
+      "steamui/2101.js": {
+        "sha256": "9c6e4d044a0f42560903426a489284c94e89327059b037bb7dc7400d6dd347fe",
+        "size": 5340,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2101.js"
+      },
+      "steamui/2140.js": {
+        "sha256": "805f1206e64ffcccced8155e3ad991237b97bc3ae275e08caa6cd7ea7923bb7c",
+        "size": 8691,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2140.js"
+      },
+      "steamui/2160.js": {
+        "sha256": "ed6a6734024b6bb005e4bf48228fedb7ceb896275bbbecf8b7561fc64939ab5a",
+        "size": 5687,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2160.js"
+      },
+      "steamui/2171.js": {
+        "sha256": "bd9b4e4b98581523982da02f05ffe0114cf777274174e8f6be9395055203a72e",
+        "size": 9135,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2171.js"
+      },
+      "steamui/218.js": {
+        "sha256": "891b76a2ffac10f7be1e640e645fe63207a120a3d2a26ec8e8a0d6e0c8cc031e",
+        "size": 1370,
+        "package": "steamui_websrc_all",
+        "member": "steamui/218.js"
+      },
+      "steamui/2198.js": {
+        "sha256": "d9ca3c1e18b08f1e85d0f034d0f5d7cd82fb2aa8c1072f58904d5d22904e03bf",
+        "size": 3942,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2198.js"
+      },
+      "steamui/2294.js": {
+        "sha256": "04cbfc0450f6545f2ec9fa4562013e71c555fc51650c762f385ff30cd90dfddb",
+        "size": 22722,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2294.js"
+      },
+      "steamui/2348.js": {
+        "sha256": "59daa0311a4fd861e1d5355b64bc3f2cb34f4baac205d667420f43ad9bd9788e",
+        "size": 5863,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2348.js"
+      },
+      "steamui/2393.js": {
+        "sha256": "e8640c45a630de9d71302303da40f2160c85c5e3925d1352343e9fa3c8773879",
+        "size": 3788,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2393.js"
+      },
+      "steamui/2397.js": {
+        "sha256": "94cb432b8947cfde24a757e477282a773aa284c662a57454b174f69695f9adf2",
+        "size": 11376,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2397.js"
+      },
+      "steamui/2493.js": {
+        "sha256": "9d145010834a97eafd98357d38a00214bd42c096736ee844f0e38175c5af512b",
+        "size": 4719,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2493.js"
+      },
+      "steamui/2539.js": {
+        "sha256": "bdf6f8f54eb782c50b849510058d1d8562be1c21b6ec7950e5d860ae78133e98",
+        "size": 5399,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2539.js"
+      },
+      "steamui/256.js": {
+        "sha256": "e19dff7c978ef173d948f57cf99d3ac8b4dc1379bae82154cea50aef27fbaa60",
+        "size": 32999,
+        "package": "steamui_websrc_all",
+        "member": "steamui/256.js"
+      },
+      "steamui/2561.js": {
+        "sha256": "e665e58a7af2739307bb67566da156f8d25cb09b8b9567100f71b08232bb0a93",
+        "size": 6668,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2561.js"
+      },
+      "steamui/2563.js": {
+        "sha256": "b5e376e78a813979b1a6058c587449a6b2bf61b973be41c6af237157169378c7",
+        "size": 5922,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2563.js"
+      },
+      "steamui/2576.js": {
+        "sha256": "e3e1e7d15b0f54af2d92d93468c40ca5f3b697c4516abe8f58be5dc8830bf655",
+        "size": 4888,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2576.js"
+      },
+      "steamui/2600.js": {
+        "sha256": "353f54f8ffbb13459a383388a2f5af074752976ba7927328ed1006305d1d6ed4",
+        "size": 12002,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2600.js"
+      },
+      "steamui/2662.js": {
+        "sha256": "2e40777652bf6256103bf4a2185aeef6eced20f10f502f52b34036bdfe157143",
+        "size": 5469,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2662.js"
+      },
+      "steamui/2742.js": {
+        "sha256": "42b134a99435a632f42d82ae7486ea81b1ab5b180c2b16e5ee7c3ca6f972d8ba",
+        "size": 25667,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2742.js"
+      },
+      "steamui/2752.js": {
+        "sha256": "1135d901b561529046fc208788a1deb70b41429983f8608ac968dbaa1dc30d51",
+        "size": 1787,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2752.js"
+      },
+      "steamui/2834.js": {
+        "sha256": "891f2e43033ce4ffc9a696d1989074709062ad3181e6f89421acd10eda3a061b",
+        "size": 9115,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2834.js"
+      },
+      "steamui/2855.js": {
+        "sha256": "b64500fe17b54ccefa85637dca97412736e7ff6e541787e1811a0a43a4750a61",
+        "size": 23835,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2855.js"
+      },
+      "steamui/2871.js": {
+        "sha256": "8e030d35f879eed5bd25dd73ae3a8e2f0b115869e87e30864eef854c9606bc0b",
+        "size": 3759,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2871.js"
+      },
+      "steamui/2916.js": {
+        "sha256": "8afa98eb9f0ea967ae2eddf7f9feacbb1959fa82f9d58ab52b5817c5065e7335",
+        "size": 5212,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2916.js"
+      },
+      "steamui/2982.js": {
+        "sha256": "d4ac48b29e02d1d0766d8d7e8eef3cee7a3c90399c350eddcb9809ac992d2787",
+        "size": 28231,
+        "package": "steamui_websrc_all",
+        "member": "steamui/2982.js"
+      },
+      "steamui/3124.js": {
+        "sha256": "00293002ab19cb757ab0723e151e4a5d1e2d03a2d2592952d76a55f60b060026",
+        "size": 43889,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3124.js"
+      },
+      "steamui/3158.js": {
+        "sha256": "c9bf2651af866b84d6740cec3e2246fbc31b9c73f4769b862eebf336e49ab85d",
+        "size": 3462,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3158.js"
+      },
+      "steamui/3177.js": {
+        "sha256": "6b4e992253af44ff29c9cd7d4467ce66ca9343102d213d8f522b902da113d1de",
+        "size": 21867,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3177.js"
+      },
+      "steamui/3222.js": {
+        "sha256": "5c46f76e7353690d1869e83b746539968000692ac97b76292be0cdf525a10d0a",
+        "size": 3661,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3222.js"
+      },
+      "steamui/3263.js": {
+        "sha256": "24b044bd6d7ea32455b1ca951e3dd094efce5f8645260a37738ff3146fd28816",
+        "size": 1375,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3263.js"
+      },
+      "steamui/3324.js": {
+        "sha256": "bfb946f1edacef7a16b38853f265de387823c193f422076808193899cd99a8e2",
+        "size": 8779,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3324.js"
+      },
+      "steamui/3334.js": {
+        "sha256": "c6667a05dbc446fefa7098d4ddaa29e74deba14f10c1f8f6460cbce5aca12188",
+        "size": 26385,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3334.js"
+      },
+      "steamui/3352.js": {
+        "sha256": "167904760afad2008c5dc79915a0716da066d9d5ccfd38839fa6fde686f806d9",
+        "size": 8409,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3352.js"
+      },
+      "steamui/3356.js": {
+        "sha256": "f3683e668258a910385c8bf85fe58b710a61ff368ce0566d3554e25c1df3868d",
+        "size": 4961,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3356.js"
+      },
+      "steamui/342.js": {
+        "sha256": "892e58fa05efd78d3b0254c0ac6c5302d711176e28c480480e0f4a6da7eac797",
+        "size": 25084,
+        "package": "steamui_websrc_all",
+        "member": "steamui/342.js"
+      },
+      "steamui/3473.js": {
+        "sha256": "751715349c7a443d51ff9593d96955dc442abd1f723f227e81ae8531f84fd029",
+        "size": 6469,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3473.js"
+      },
+      "steamui/3585.js": {
+        "sha256": "293c91d7f42fc69dfc4f212faadb647536ad2f96974c95da52da7abeb3718792",
+        "size": 25111,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3585.js"
+      },
+      "steamui/3589.js": {
+        "sha256": "930fff629f3da344b4afb9a9098ab818d45033e0b5317dbcbdfa51f87f0bf1ff",
+        "size": 1789,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3589.js"
+      },
+      "steamui/3645.js": {
+        "sha256": "88632f1239cfc0a9902fe7812d19ebcc933b847fe213aa79ccceee24bb04ada2",
+        "size": 1325,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3645.js"
+      },
+      "steamui/3675.js": {
+        "sha256": "1230518e95ec23bc707ce4be6e6672fdc0536f9901d11983753e217e31bf8961",
+        "size": 25534,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3675.js"
+      },
+      "steamui/3695.js": {
+        "sha256": "5424be7daee294236eef198329352e872461e9622c9d9a4b810bf32b0057a836",
+        "size": 1369,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3695.js"
+      },
+      "steamui/3706.js": {
+        "sha256": "71a4020d15123dfbeb99c125a464f2904c01a6dddea3a7697430fe862c86fdc6",
+        "size": 1967,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3706.js"
+      },
+      "steamui/3744.js": {
+        "sha256": "8185d8e09a4a05b57f2fb957144458e3da3d26749847756e4b7f77b2ab353ab4",
+        "size": 6771,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3744.js"
+      },
+      "steamui/3876.js": {
+        "sha256": "9100328783ad18d1cbe69a18035f100a0c558b1c90f1c10aec73ed7af9c07a06",
+        "size": 9101,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3876.js"
+      },
+      "steamui/3899.js": {
+        "sha256": "ec4f849615bcbed85c72e73fa4ab03e4b865845cbae5f6e90744df7c1a45c032",
+        "size": 5370,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3899.js"
+      },
+      "steamui/3947.js": {
+        "sha256": "3e7abc6a9c502108875707be702a0d076476c0ebc52e0fb258fa59c19514ca2f",
+        "size": 1383,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3947.js"
+      },
+      "steamui/3961.js": {
+        "sha256": "09268e9b50257d10d7e2cbf6011520fa3380f008f6a997040b97e94f0566e103",
+        "size": 27067,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3961.js"
+      },
+      "steamui/3962.js": {
+        "sha256": "a5c58a5b96efe54b82c6f0c69750f94c6d1299cee5dc404a3889a8fbe4e3c83e",
+        "size": 22026,
+        "package": "steamui_websrc_all",
+        "member": "steamui/3962.js"
+      },
+      "steamui/4057.js": {
+        "sha256": "38cfba3c1975bf41bf52f737d0ac7a72abddb2070ec0d6a472f8badb3cb5965b",
+        "size": 24870,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4057.js"
+      },
+      "steamui/4259.js": {
+        "sha256": "6a9fa1099515ca4b28bbb6a1e393ffdc8e8ec3d0a1a48a024d629537e45d0f9d",
+        "size": 4902,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4259.js"
+      },
+      "steamui/4291.js": {
+        "sha256": "082690c8df8ff9c2915f9719e7fbb3fb4d4ad101188aa62267b239fdd21c8a8d",
+        "size": 9070,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4291.js"
+      },
+      "steamui/4309.js": {
+        "sha256": "d716905bc58e120031f5a9ecac248ce2159a185d35410559be0f1a15baee70c3",
+        "size": 8814,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4309.js"
+      },
+      "steamui/437.js": {
+        "sha256": "923bb3a6747f4ef1dfce2ea3a8fc66eeb9786d965ebf156a9d16fb12a80c8135",
+        "size": 4031,
+        "package": "steamui_websrc_all",
+        "member": "steamui/437.js"
+      },
+      "steamui/4402.js": {
+        "sha256": "00b098a36b1309d3c28d900dfe5a83ef9e68c720fa0906c76b01eb783e882b2e",
+        "size": 8667,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4402.js"
+      },
+      "steamui/4475.js": {
+        "sha256": "288bce7514caef1aeb75a0aefc15ad972a543172e7fb4b208241f542dbd2a76f",
+        "size": 5286,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4475.js"
+      },
+      "steamui/4500.js": {
+        "sha256": "e4b134a2e7aecf1f24238688b1dcd93b34397c0f6f2d401610ac1440d9ffcde3",
+        "size": 1371,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4500.js"
+      },
+      "steamui/4513.js": {
+        "sha256": "2b54e3d8e5d42db1aa7d81549ba1cd128be0d4abc1b261d596325d01ea4c881a",
+        "size": 6015,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4513.js"
+      },
+      "steamui/4515.js": {
+        "sha256": "0330406ad07759989f0f68718d03c34f2725b9f739e950efe334432ae3dbf9ea",
+        "size": 5706,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4515.js"
+      },
+      "steamui/4572.js": {
+        "sha256": "47ff3b193bde98b8adae2a87d64e4508be9b031fa0f0aaba73b175bb060ca0ac",
+        "size": 9190,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4572.js"
+      },
+      "steamui/4595.js": {
+        "sha256": "e4f2ca99881d1e60677b7094a2fc5f13c0c10039653a3af79f20f20df6928304",
+        "size": 1249,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4595.js"
+      },
+      "steamui/4768.js": {
+        "sha256": "1e7f3973b4eb4bd2f1609e7b1ee2a35c8c981e557a12d87b2e014ede4a4725e3",
+        "size": 5072,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4768.js"
+      },
+      "steamui/4825.js": {
+        "sha256": "b63f22a28ab9716645050eb9c0e507b1b571db4f811a3976e1a49912aeb7d317",
+        "size": 9179,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4825.js"
+      },
+      "steamui/4912.js": {
+        "sha256": "ba85c9032c4a3a068c30694fa72b92f5d23db3f1fe3132f0da6a0d9fa92cb72f",
+        "size": 10482,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4912.js"
+      },
+      "steamui/4922.js": {
+        "sha256": "28452296d97d68721b7485c0c550e2d896c1abf2722eacf9270b336e5ccee69d",
+        "size": 36670,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4922.js"
+      },
+      "steamui/4925.js": {
+        "sha256": "97e34a2912a919ba0cbb6a8eb97e3adaf33c00c9e615a290fc3b078c753ae845",
+        "size": 5349,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4925.js"
+      },
+      "steamui/4933.js": {
+        "sha256": "83bac1c99e00eb28ba917296d93183e1f7a0d9ffed0cbe2fcd1a6139e8f660fb",
+        "size": 6041,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4933.js"
+      },
+      "steamui/4951.js": {
+        "sha256": "b3ba36d5b87d389912e233ad62f3b90a9c3ea13b33e5f9021afbe53fefa499a8",
+        "size": 25298,
+        "package": "steamui_websrc_all",
+        "member": "steamui/4951.js"
+      },
+      "steamui/499.js": {
+        "sha256": "8e1e29017efac36552a93b06b9ab76eac542ca002e3b78dddd2e7ef6ce8a5f0b",
+        "size": 24853,
+        "package": "steamui_websrc_all",
+        "member": "steamui/499.js"
+      },
+      "steamui/5019.js": {
+        "sha256": "af4913baa6dbd40a81dcde9ddf4a8e11b8301f196eccf58cfccacb9f491f8be6",
+        "size": 25356,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5019.js"
+      },
+      "steamui/5045.js": {
+        "sha256": "9f4be3300ea2e2c8c08a5a2d5f63f02973563fb2229706c4f379d980ef2ae054",
+        "size": 25649,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5045.js"
+      },
+      "steamui/5056.js": {
+        "sha256": "01e540731faeee7a21e55ad66f16ae72f83d73bca2071eddb83637c98ca7652c",
+        "size": 3688,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5056.js"
+      },
+      "steamui/5073.js": {
+        "sha256": "227c08e58bd281c8d38916d9a90c49ce1684294193e2050305f736699592b6d7",
+        "size": 1375,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5073.js"
+      },
+      "steamui/5181.js": {
+        "sha256": "ffa7c324be0bd17ae89adf87846d39f19df26dcb42464d6a68be502f986f7261",
+        "size": 5444,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5181.js"
+      },
+      "steamui/5256.js": {
+        "sha256": "6e1a276f2db427b8229a33dab9f421fb7a2ae5269cee454a9d2cbc9981aa6e03",
+        "size": 3700,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5256.js"
+      },
+      "steamui/5269.js": {
+        "sha256": "eceb82d5b379c408046f35c7b3d2ce6b3b7abe6511a5cea504c1902d848d4947",
+        "size": 5353,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5269.js"
+      },
+      "steamui/5324.js": {
+        "sha256": "b776d51a6996431ea61510d52f320b9fc12152d62eb4ba620f7a6f3e319b168f",
+        "size": 9451,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5324.js"
+      },
+      "steamui/5355.js": {
+        "sha256": "b8ebb9596a0d3db697613abc55d118c9cf3581864e287f2f24417de30279a4fb",
+        "size": 8471,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5355.js"
+      },
+      "steamui/5473.js": {
+        "sha256": "378acd79a511316b3e8a608c46036c2e3cf2e1d1540f53feb4d5c506b5f8072a",
+        "size": 5049,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5473.js"
+      },
+      "steamui/548.js": {
+        "sha256": "482427063dbbc7201785015aca9aab3060b345be8b858ba849d9acb8af03bdef",
+        "size": 1280,
+        "package": "steamui_websrc_all",
+        "member": "steamui/548.js"
+      },
+      "steamui/5497.js": {
+        "sha256": "ad24052aa46b804c602025f2fecd7fb710cce8bc00930bac1d093449470ad514",
+        "size": 2960,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5497.js"
+      },
+      "steamui/5501.js": {
+        "sha256": "4a644f1d952b517efa8723e93ef73d963d19bb9b41555524b9d9ccc8969cfaeb",
+        "size": 9276,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5501.js"
+      },
+      "steamui/5536.js": {
+        "sha256": "19dcc42aa39177892dc5ee2004a66facef61631a7d6e4e52b5f15c772f71bd24",
+        "size": 4403,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5536.js"
+      },
+      "steamui/5569.js": {
+        "sha256": "2653557ecd0a7d380aab894685201efbecaa242d7d28085fc3124e9fe40f385b",
+        "size": 25791,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5569.js"
+      },
+      "steamui/5575.js": {
+        "sha256": "e49194746af2177449e2e5e496e91829f748344ad29e1564d6df38344fff3deb",
+        "size": 752,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5575.js"
+      },
+      "steamui/5668.js": {
+        "sha256": "020e75fa7e9a4e4d1dd4b2ae31d48e46ee6234aff03622e32f76e3d322a86030",
+        "size": 5572,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5668.js"
+      },
+      "steamui/5743.js": {
+        "sha256": "2be73b1a47ab8fae7bc94ac50cbd39c35ae27e526e1fafcaa84e2e679e543aad",
+        "size": 3529,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5743.js"
+      },
+      "steamui/5752.js": {
+        "sha256": "040b23d9954999860c9f663f26108cfda7016b3ffed4a7405fa2f3ab4c8e76f4",
+        "size": 1567,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5752.js"
+      },
+      "steamui/580.js": {
+        "sha256": "342a61b9e0b1e008f05535c45ac498087619304be047470dff75c316ad107e3a",
+        "size": 5217,
+        "package": "steamui_websrc_all",
+        "member": "steamui/580.js"
+      },
+      "steamui/5903.js": {
+        "sha256": "89c5d8ec2d06597057f3e7bee81cebbd90cdf016b2816c1325528ae661dc2922",
+        "size": 144,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5903.js"
+      },
+      "steamui/5905.js": {
+        "sha256": "c639542b0c4fb4fb4e7961e9b92488334ffaffdcda066cf4ab1ae13587ce6ca4",
+        "size": 5644,
+        "package": "steamui_websrc_all",
+        "member": "steamui/5905.js"
+      },
+      "steamui/6034.js": {
+        "sha256": "4bec1af5bbd981fe02d2a29f8670fa228f5ea67e06ada0857d1331cff5e65d79",
+        "size": 3499,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6034.js"
+      },
+      "steamui/6235.js": {
+        "sha256": "37de5bda88cd30115b9cdcf53b05e9daec478a3cfd94997c157e18ff3ec7b0b2",
+        "size": 1429,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6235.js"
+      },
+      "steamui/63.js": {
+        "sha256": "eb6559cdedf10e5a4cffde8f061b26dcbe142821269ee1573e41014795a38765",
+        "size": 5114,
+        "package": "steamui_websrc_all",
+        "member": "steamui/63.js"
+      },
+      "steamui/6350.js": {
+        "sha256": "41aa6e76fe2aebb0d52b9a276b5cfa8afe612ef8c204b0bf8e689c5259341c4a",
+        "size": 1336,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6350.js"
+      },
+      "steamui/6381.js": {
+        "sha256": "e407d0a7110261b6c2ede09180673dcd59611033f65dac235afcad7847b29391",
+        "size": 1262,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6381.js"
+      },
+      "steamui/6391.js": {
+        "sha256": "8989733285c14f6275bfdf2acf1bbc7c6a22cf923a878ea028cb3510e5f30b81",
+        "size": 7924,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6391.js"
+      },
+      "steamui/6513.js": {
+        "sha256": "8d22c1774d016f2c544dadaf4837871201144c48a5557ce0f8081f3cd5410061",
+        "size": 3999,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6513.js"
+      },
+      "steamui/6643.js": {
+        "sha256": "57bba8ed63b7226607ee9bf9d8e4ba9431c90c2d8b09358d8ad2e3d5098e145c",
+        "size": 34742,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6643.js"
+      },
+      "steamui/6696.js": {
+        "sha256": "e14deb8434d29b3835214395016323d6554174e1f6c7115ec408a25402a52f33",
+        "size": 6686,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6696.js"
+      },
+      "steamui/6783.js": {
+        "sha256": "74f2b75710d3b1be35181f4718fd88654576981b7baafea83b4881c77d6bec92",
+        "size": 23972,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6783.js"
+      },
+      "steamui/6787.js": {
+        "sha256": "d67f929e141ca5dcca79132735f0dbad8b11be31f7805e55b29545a26532e83b",
+        "size": 4657,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6787.js"
+      },
+      "steamui/6810.js": {
+        "sha256": "e34710fea39c97fd29b4e7e945271ac235b6919ecd53a859fa5d0bd661455508",
+        "size": 5506,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6810.js"
+      },
+      "steamui/6865.js": {
+        "sha256": "6201c848e05bfff2a077c9631b0b0f9c7820d5488a7f0c77e12ca1d0836e2152",
+        "size": 5184,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6865.js"
+      },
+      "steamui/6879.js": {
+        "sha256": "0ccea3d58f7614f8f254890ba7d972558c351182c1338b2200ad641888129483",
+        "size": 5134,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6879.js"
+      },
+      "steamui/6884.js": {
+        "sha256": "42db928a30003d94f52506e8cc2c37adf2b9be235e31e63eb42d58e25cda9aeb",
+        "size": 5314,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6884.js"
+      },
+      "steamui/6913.js": {
+        "sha256": "cac6a2f2acedd934f961c5f5e3f9039ce9889b0ac7d5814775f58a8bb203c850",
+        "size": 3928,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6913.js"
+      },
+      "steamui/6960.js": {
+        "sha256": "a11b099b0ebd0d163b5c41987fbf45be863c67827a350f6a0922f0adb97186a0",
+        "size": 1240,
+        "package": "steamui_websrc_all",
+        "member": "steamui/6960.js"
+      },
+      "steamui/699.js": {
+        "sha256": "227d8de9918276a434cff523b806c2af4778790ed048b9d3befa8eece60c85a4",
+        "size": 3802,
+        "package": "steamui_websrc_all",
+        "member": "steamui/699.js"
+      },
+      "steamui/716.js": {
+        "sha256": "1e01c2dcdd4bbdd3bf411bb045e11e6ac1100ccdaa014d28d0df53d308f23672",
+        "size": 5217,
+        "package": "steamui_websrc_all",
+        "member": "steamui/716.js"
+      },
+      "steamui/7191.js": {
+        "sha256": "da4a44f3d0c4867f81e33e3ba351f7b02ff1e738b79c4737350fe59564da7dfb",
+        "size": 8841,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7191.js"
+      },
+      "steamui/728.js": {
+        "sha256": "b4f2fbb2837961edcbbb21a759283bb8036cee389d756dc141dc6c15eb0db0a8",
+        "size": 25754,
+        "package": "steamui_websrc_all",
+        "member": "steamui/728.js"
+      },
+      "steamui/7306.js": {
+        "sha256": "7e263a8bf94629a506f360e13dadd8d23b94ebb6de0baada463c8b33739414ff",
+        "size": 5971,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7306.js"
+      },
+      "steamui/7386.js": {
+        "sha256": "20f144c1a29f57c79b1b1bf9c9c2f4560def3bd2b11eb00236450497aee33249",
+        "size": 3938,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7386.js"
+      },
+      "steamui/748.js": {
+        "sha256": "37e5243bf47d538f09850031825fd9e1f1646cc846ef7c9f20dde76382239ff1",
+        "size": 6492,
+        "package": "steamui_websrc_all",
+        "member": "steamui/748.js"
+      },
+      "steamui/7503.js": {
+        "sha256": "b0ec2945c6db5679c227aaa6be46811f11df29888f3b86892ec947d8b4a7e2d1",
+        "size": 110,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7503.js"
+      },
+      "steamui/7554.js": {
+        "sha256": "600f960ed64a4eb64a85134bd290d7770f51245da7feefb673a4264d81802ded",
+        "size": 3679,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7554.js"
+      },
+      "steamui/761.js": {
+        "sha256": "026e0038513f884719641be63d1310c776e41784c7739b69c60418d77d8133ef",
+        "size": 3350,
+        "package": "steamui_websrc_all",
+        "member": "steamui/761.js"
+      },
+      "steamui/7627.js": {
+        "sha256": "bae7c2258c0b892c6fbbe98e7f7bf6376ab865d247dd334fe11d8cb4b897625a",
+        "size": 4773,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7627.js"
+      },
+      "steamui/7656.js": {
+        "sha256": "91d41c418cb73bf471b32ae8cd630abfeef96ef03c3b44e562f19b0bbcf9484c",
+        "size": 4739,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7656.js"
+      },
+      "steamui/766.js": {
+        "sha256": "632c1b6322d58218791e9512c42f830ea7d8d38c5ab31131710544f774338744",
+        "size": 5736,
+        "package": "steamui_websrc_all",
+        "member": "steamui/766.js"
+      },
+      "steamui/7906.js": {
+        "sha256": "dfa5bd7ba15aa2ccd54f84a384de9f5808e17ffd6259fab4cc923f85905c64e9",
+        "size": 9232,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7906.js"
+      },
+      "steamui/7930.js": {
+        "sha256": "95427e07eff6ac6517846f49c6c3a9c831b62aa368af2160883a9bb148afd1a8",
+        "size": 5519,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7930.js"
+      },
+      "steamui/7946.js": {
+        "sha256": "ec22764ab6125f1a9e9dc1e51375be628d2eb3693ec8ce72701ab38c5136819e",
+        "size": 1357,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7946.js"
+      },
+      "steamui/7996.js": {
+        "sha256": "6837118bc6b262caa3a8c8f21424f015ae5383778423208401a8b85bd5770c69",
+        "size": 5135,
+        "package": "steamui_websrc_all",
+        "member": "steamui/7996.js"
+      },
+      "steamui/806.js": {
+        "sha256": "c0fa7f4f252a8f6b7b4e65b2e2dec2931d3558489d227a8077492c9a898422d6",
+        "size": 9052,
+        "package": "steamui_websrc_all",
+        "member": "steamui/806.js"
+      },
+      "steamui/8089.js": {
+        "sha256": "e4459cdb32600a3c83df7e825f841230aef1f837a80c2a77b7865f20d9aba4af",
+        "size": 4089,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8089.js"
+      },
+      "steamui/8098.js": {
+        "sha256": "1b48d9430a9e9d3fd5f4810359e67d8d114fdfc2c997e5edb7502b110642c085",
+        "size": 23356,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8098.js"
+      },
+      "steamui/8196.js": {
+        "sha256": "ed63ca6a1b1274544e86f9b07053bec4f0b0c172d0996b2fd12b817be154b21e",
+        "size": 9300,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8196.js"
+      },
+      "steamui/8198.js": {
+        "sha256": "9774d1c9f889828e83ecaa6d7cdf2abd4f8ee20a3eeec43f539873a3173ac72d",
+        "size": 25151,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8198.js"
+      },
+      "steamui/8219.js": {
+        "sha256": "34b76d4440ac41345f0f509ab8cec8a45a7c8901643f064b9a98e17f292888c7",
+        "size": 3868,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8219.js"
+      },
+      "steamui/8247.js": {
+        "sha256": "1686c4168a40d4945ab8323ed0f7ea252929a78c54af220d0753a8299a169aa8",
+        "size": 3541,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8247.js"
+      },
+      "steamui/8330.js": {
+        "sha256": "a93e190946c715753565c46bfc9dd0cbc2d93f846d11487e4bbc1a60c9f43490",
+        "size": 5174,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8330.js"
+      },
+      "steamui/8346.js": {
+        "sha256": "36611b7c7f83d08cf26c9f7ffcb25cc21761189493ec23c7089336a9bbef1016",
+        "size": 24135,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8346.js"
+      },
+      "steamui/8391.js": {
+        "sha256": "c2e21549fe1bee8edb6cec38d10460d3827004fa4cefd7a4c6c9c9b64f49d2d7",
+        "size": 5520,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8391.js"
+      },
+      "steamui/8405.js": {
+        "sha256": "2ae8c73c05f85bdcba7f6cf35092488d30e312867c78648f3236ba95a7d92906",
+        "size": 3648,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8405.js"
+      },
+      "steamui/8484.js": {
+        "sha256": "541657ac79d5a34e933c6eb08744adad1becaa2c8e6198e0fbbeb6860c6c2d74",
+        "size": 5546,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8484.js"
+      },
+      "steamui/8497.js": {
+        "sha256": "afc4e72ee285841613403333da2b74e6db9d798c9ad40a1ec0b848beb17c02f8",
+        "size": 1729,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8497.js"
+      },
+      "steamui/8536.js": {
+        "sha256": "340606e30a4db488360fcd97f41cf68da6bd068446a0272593ab70ac6ca6308c",
+        "size": 8091,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8536.js"
+      },
+      "steamui/8635.js": {
+        "sha256": "8a3e2b878de78680b480cc53efec10453f0491a661327807760a213216f4b752",
+        "size": 9880,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8635.js"
+      },
+      "steamui/8636.js": {
+        "sha256": "f108f441de99e48a6bddcb5bb6857d2debee1e66f9f93b3228935db714ce4b43",
+        "size": 5416,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8636.js"
+      },
+      "steamui/8646.js": {
+        "sha256": "2d64db14c1b644d7ed9c753d74ef7cf2218f146ef006d092601fa570c0512884",
+        "size": 3781,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8646.js"
+      },
+      "steamui/8700.js": {
+        "sha256": "526bc989f8c983cc853cbb837cca1e7df443feaff37998f05323f31336b13e33",
+        "size": 1254,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8700.js"
+      },
+      "steamui/876.js": {
+        "sha256": "a073786f28cf100394adb24032586ffb11bbfd143070f5e94efdccdf1785828a",
+        "size": 5334,
+        "package": "steamui_websrc_all",
+        "member": "steamui/876.js"
+      },
+      "steamui/8780.js": {
+        "sha256": "b960b8bcaacd34f15a8b92ebb008e10dadd6197e8bb7ded8ca042c3141763c7c",
+        "size": 1371,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8780.js"
+      },
+      "steamui/8839.js": {
+        "sha256": "03e3775368db44d87b023b7f770953de10338ae2fab555a82dfa6ccbd88463c5",
+        "size": 1254,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8839.js"
+      },
+      "steamui/884.js": {
+        "sha256": "66991f600192cf7cb76ba0de1fa7a38cf669c22571f2e88ea7e6f4ad983aafb9",
+        "size": 1281,
+        "package": "steamui_websrc_all",
+        "member": "steamui/884.js"
+      },
+      "steamui/8854.js": {
+        "sha256": "4a49d78301663d8a7e2cccb7b94479b68232b4bdf05d134c53e60590a463ad8e",
+        "size": 3734,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8854.js"
+      },
+      "steamui/8882.js": {
+        "sha256": "b4c2e9449b7aa7f4ce58473197b350bdc406d8fb7f18cac10c65c1508bac741d",
+        "size": 4986,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8882.js"
+      },
+      "steamui/8906.js": {
+        "sha256": "b7cd05404d7b44e52add274e238478d89c4168de7c072289523838c41b0d3ead",
+        "size": 5260,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8906.js"
+      },
+      "steamui/8935.js": {
+        "sha256": "99329ffaf576f11ebbc57e33e1a8994b3b97e20d6b569f7da64d7cf0b3f2d91d",
+        "size": 9334,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8935.js"
+      },
+      "steamui/8948.js": {
+        "sha256": "78fe315a80345b0efd73dbdc502a5603906d9637307208d69834af52cbf35f89",
+        "size": 5205,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8948.js"
+      },
+      "steamui/8970.js": {
+        "sha256": "d19c155b0f873ad2cad8aefd2c5256f3986e14183d557ad5d136f85ed8320026",
+        "size": 7860,
+        "package": "steamui_websrc_all",
+        "member": "steamui/8970.js"
+      },
+      "steamui/9108.js": {
+        "sha256": "4d31768fb4ed6ef9bedac6d5c6feb12e8e7feb7faac508b266eac7e96e85d101",
+        "size": 8471,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9108.js"
+      },
+      "steamui/9120.js": {
+        "sha256": "0c270ca9c3119bbf286b1b59b89df5ce049c7bb18830022058bac53eddeff449",
+        "size": 25121,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9120.js"
+      },
+      "steamui/9183.js": {
+        "sha256": "b1c722cd6ce1e2b92b35d908934c8068418e8470ea41b707abf768bb14cd4ac4",
+        "size": 5211,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9183.js"
+      },
+      "steamui/9266.js": {
+        "sha256": "f380234da2ea20811c2113948708cd3efec4867546ddb394da6779f9c3237ad5",
+        "size": 24485,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9266.js"
+      },
+      "steamui/9268.js": {
+        "sha256": "82286be7752415884d2ba91b96e5c318444f591b9b37c4d9cbbb261f480dc818",
+        "size": 1397,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9268.js"
+      },
+      "steamui/9365.js": {
+        "sha256": "3848d6e5dc61b21e1adc8ea4ab02fc00b4b562a6b764d6e7c4b3f38ffadb84b2",
+        "size": 1397,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9365.js"
+      },
+      "steamui/9441.js": {
+        "sha256": "81abfb84eb791f70e70554fb93a1f5cce19bd3352cdd37b1792067183b71b137",
+        "size": 95206,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9441.js"
+      },
+      "steamui/9458.js": {
+        "sha256": "09307eecbe35b0f4bd92d433741529bcd802a78338e5977bd3547870db69e77d",
+        "size": 13363,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9458.js"
+      },
+      "steamui/9465.js": {
+        "sha256": "916a711ada62b285e2a1373474eb1abf2d4b8760027b20dac1b9a0bdadf2d8b0",
+        "size": 3957,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9465.js"
+      },
+      "steamui/9485.js": {
+        "sha256": "52c77a5a28f791ddef772606efc4146ef09f3695a2b5998ab3a889ee59f6f517",
+        "size": 10048,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9485.js"
+      },
+      "steamui/9536.js": {
+        "sha256": "8a7b39e9ad180c7098adf8edb960ac0a140d869411fb2d683344de30edfa324c",
+        "size": 1483,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9536.js"
+      },
+      "steamui/9558.js": {
+        "sha256": "0aacecb7b7e8a64fe407d5190f1264490c4b6d2827f884b99a23ef2e6f89f8cd",
+        "size": 3153,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9558.js"
+      },
+      "steamui/959.js": {
+        "sha256": "073d22b58e1900185581e0ea0f6bd1a4081379045561c7e6c8b19ee658ab1acb",
+        "size": 35123,
+        "package": "steamui_websrc_all",
+        "member": "steamui/959.js"
+      },
+      "steamui/9637.js": {
+        "sha256": "2635d6dc4753c08d63f62bd9b3ad4db0d7c7d7a02f60c0923faccd1215e8897f",
+        "size": 1356,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9637.js"
+      },
+      "steamui/9737.js": {
+        "sha256": "e03b016df2e4a1cc1a652ae096f42ea62b45de460e8075e85d803b2e5bb25516",
+        "size": 27461,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9737.js"
+      },
+      "steamui/9740.js": {
+        "sha256": "e0e7a76e4168d9284ff187e4695de42c08169160c23b6de114f432dfa9020849",
+        "size": 8727,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9740.js"
+      },
+      "steamui/9779.js": {
+        "sha256": "a0c58d73df748e7fd96d3e0493a655726192e0b94a21f2c0c8c0fe28082b1604",
+        "size": 5129,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9779.js"
+      },
+      "steamui/9845.js": {
+        "sha256": "2ed825c2cc2013eb72f91a7f8b487ff936e147804588a623f872e0f92384a439",
+        "size": 24604,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9845.js"
+      },
+      "steamui/9853.js": {
+        "sha256": "7de2ed161e06407d4b40d2d610d774776fc525f378cecc9982743e03e3453678",
+        "size": 4720,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9853.js"
+      },
+      "steamui/9861.js": {
+        "sha256": "f3f27fb4bf47c7666ff18cc0fbf704250441c2ee76ed286ea3e052644fd016e8",
+        "size": 5443,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9861.js"
+      },
+      "steamui/9862.js": {
+        "sha256": "5f2b438aa56738ad8d24aa82c2f7670ac7f46df8251a5ee8536e5cc76676543e",
+        "size": 6223,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9862.js"
+      },
+      "steamui/9902.js": {
+        "sha256": "972262576e41271fab26e305c7efa7a03cd8d6912ca13683de33c68111354062",
+        "size": 5410,
+        "package": "steamui_websrc_all",
+        "member": "steamui/9902.js"
+      },
+      "steamui/awardicon.js": {
+        "sha256": "1e4828baed6526c387198d9a64e9b84af0446901986af4f288d3b14651cf67bf",
+        "size": 1233,
+        "package": "steamui_websrc_all",
+        "member": "steamui/awardicon.js"
+      },
+      "steamui/broadcast.js": {
+        "sha256": "b6e6b4c4fb79687ab21d0b5e28b6cf307bfaa172d62c85d56a89a5d71ce702b8",
+        "size": 32163,
+        "package": "steamui_websrc_all",
+        "member": "steamui/broadcast.js"
+      },
+      "steamui/broadcastapp.js": {
+        "sha256": "c6dc471665626e2a6067a4a13b833cb58309507456ca2bba673cb47847e09530",
+        "size": 14793,
+        "package": "steamui_websrc_all",
+        "member": "steamui/broadcastapp.js"
+      },
+      "steamui/chunk~1a96cdf59.js": {
+        "sha256": "32e8020f48d0c4e0c5b39ea7f96be8e80fa1b24e855f12664c310276acde8a91",
+        "size": 50287,
+        "package": "steamui_websrc_all",
+        "member": "steamui/chunk~1a96cdf59.js"
+      },
+      "steamui/chunk~2dcc5aaf7.js": {
+        "sha256": "f9606b111203c9140dcdd6fc016a0ee00e4c8406aeb786187c42873f08d071fb",
+        "size": 14382868,
+        "package": "steamui_websrc_all",
+        "member": "steamui/chunk~2dcc5aaf7.js"
+      },
+      "steamui/css/9441.css": {
+        "sha256": "6fe54fc37af53e4e67ca33426985e2f49c046e31cd3b203690e24287ef78fa3f",
+        "size": 12740,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/9441.css"
+      },
+      "steamui/css/awardicon.css": {
+        "sha256": "4637d0780139b7bef8cddb1c92d040ba1c154a91ec7113593d6eed147444e82c",
+        "size": 783,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/awardicon.css"
+      },
+      "steamui/css/broadcast.css": {
+        "sha256": "42c035e999a43e331c24ca3f9ac6223ee3baf6b3c6dcc221a85a88cea68e7d90",
+        "size": 32906,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/broadcast.css"
+      },
+      "steamui/css/broadcastapp.css": {
+        "sha256": "ef536d3506e16e47131631b0348d159b52a8e438b7d37d136ddfa0ab83830961",
+        "size": 1930,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/broadcastapp.css"
+      },
+      "steamui/css/chunk~1a96cdf59.css": {
+        "sha256": "1d4b6576ef7846603c659c62c482219e5ed4a53fbc800d833564cc45c5e245af",
+        "size": 61949,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/chunk~1a96cdf59.css"
+      },
+      "steamui/css/chunk~2dcc5aaf7.css": {
+        "sha256": "85e76f6ed499198eedc1cbfa38ca04c6e253886eb49c1ca7dd3754293044ea4a",
+        "size": 5133687,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/chunk~2dcc5aaf7.css"
+      },
+      "steamui/css/discoveryqueue.css": {
+        "sha256": "ca9d724d01573d3ea3643d4014c9bc90cbba8ce091854a1ab34349f0da1f5a0b",
+        "size": 30037,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/discoveryqueue.css"
+      },
+      "steamui/css/gamenotes.css": {
+        "sha256": "cd90bf57eb34c000a9a90e2e50ea4243a56a48c89dd45180c9cef9a3800e4b2a",
+        "size": 225,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/gamenotes.css"
+      },
+      "steamui/css/gamerecording.css": {
+        "sha256": "52c56ab561e9b71c3a10fe7501018861ed8352fb07f445c7a96eb9542fb07005",
+        "size": 905,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/gamerecording.css"
+      },
+      "steamui/css/library.css": {
+        "sha256": "958d7e904af473fc8be9fd8d705b92c4a84f090f2a4b3cfa031a346199d40fa1",
+        "size": 75426,
+        "package": "steamui_websrc_all",
+        "member": "steamui/css/library.css"
+      },
+      "steamui/discoveryqueue.js": {
+        "sha256": "33c4325d3863517b5a8bb054ffe819db909d6456d186c092e5d0651e0b8cd069",
+        "size": 43499,
+        "package": "steamui_websrc_all",
+        "member": "steamui/discoveryqueue.js"
+      },
+      "steamui/gamenotes.js": {
+        "sha256": "a838126603e4648560fe77c348135d9707bee15682d47a39dfe7038f67f26d37",
+        "size": 2844,
+        "package": "steamui_websrc_all",
+        "member": "steamui/gamenotes.js"
+      },
+      "steamui/gamerecording.js": {
+        "sha256": "5e315bd608bfce658aeeaa498d7220a01c191957fb8c870d255a6c4018d3000b",
+        "size": 29736,
+        "package": "steamui_websrc_all",
+        "member": "steamui/gamerecording.js"
+      },
+      "steamui/index.html": {
+        "sha256": "55ced284314dbc65bff38fb1333d4f4bd617635895e2c0e2197b05028c243282",
+        "size": 457,
+        "package": "steamui_websrc_all",
+        "member": "steamui/index.html"
+      },
+      "steamui/libraries/libraries~00299a408.js": {
+        "sha256": "5ec27066d77615f8078fd18a217e630e2a117120b1277bcadf785e06ab011abb",
+        "size": 621237,
+        "package": "steamui_websrc_all",
+        "member": "steamui/libraries/libraries~00299a408.js"
+      },
+      "steamui/libraries/libraries~2dcc5aaf7.js": {
+        "sha256": "69012986eb4dc5d03004edc04a0bdada8f0c1537522dad0dd296bcec97885db5",
+        "size": 1992788,
+        "package": "steamui_websrc_all",
+        "member": "steamui/libraries/libraries~2dcc5aaf7.js"
+      },
+      "steamui/library.js": {
+        "sha256": "dbaed206d64c72f1d78c1566c59de60c77b8e002cb905d070805f4770a47aa05",
+        "size": 682947,
+        "package": "steamui_websrc_all",
+        "member": "steamui/library.js"
+      },
+      "steamui/licenses.js": {
+        "sha256": "63c815ad8c4fdf2470a92d38afec2bf4cf22c6b100095f3cd43e57b62b0f6bc9",
+        "size": 107185,
+        "package": "steamui_websrc_all",
+        "member": "steamui/licenses.js"
+      },
+      "steamui/localization/friendsui_arabic-json.js": {
+        "sha256": "47ba183e0a2244e74c7b9acb6f23b36cd22dd5c4a613ce9ab5921d69077425cb",
+        "size": 99327,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_arabic-json.js"
+      },
+      "steamui/localization/friendsui_brazilian-json.js": {
+        "sha256": "28d6e8c09b70ed240f52d465ab1e9f716c8bcf97234caa11535b7a0568d26bf2",
+        "size": 80577,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_brazilian-json.js"
+      },
+      "steamui/localization/friendsui_bulgarian-json.js": {
+        "sha256": "e6d7e89fef99cb370dde65f7579a2126faff9b0211e74c63b9b9548472b728b6",
+        "size": 114963,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_bulgarian-json.js"
+      },
+      "steamui/localization/friendsui_czech-json.js": {
+        "sha256": "af9370e362d1ad73bedc8d6df06162a7d1e151e4f4123559478badba89052f4e",
+        "size": 83049,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_czech-json.js"
+      },
+      "steamui/localization/friendsui_danish-json.js": {
+        "sha256": "a5c334b6a50426e7c6a539c3b7c518cd6ab70dfa0125d79283777ef5bd2ef121",
+        "size": 79599,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_danish-json.js"
+      },
+      "steamui/localization/friendsui_dutch-json.js": {
+        "sha256": "b42656780409a372283539bd630d177afb0f586fcc2cb9f3324747555b7156dc",
+        "size": 82179,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_dutch-json.js"
+      },
+      "steamui/localization/friendsui_english-json.js": {
+        "sha256": "cce31f6a8d7f1c46a4dec49f1cd8356e53cf46e18622960ce8f4d32662436556",
+        "size": 75688,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_english-json.js"
+      },
+      "steamui/localization/friendsui_finnish-json.js": {
+        "sha256": "73b43ce6dbdf6dd7c6b277eda91cc6dfc247c2d6e967e22be03fee16cf45fef6",
+        "size": 79006,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_finnish-json.js"
+      },
+      "steamui/localization/friendsui_french-json.js": {
+        "sha256": "a1ca4411a2e80545501ef9ad445189c60f93b673b1f1e2976b68a877f69aec0c",
+        "size": 85649,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_french-json.js"
+      },
+      "steamui/localization/friendsui_german-json.js": {
+        "sha256": "cba6d6ba71e52bfe27c8896ac94383e187dd1344e6b12222c0f7597f17097f5b",
+        "size": 84734,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_german-json.js"
+      },
+      "steamui/localization/friendsui_greek-json.js": {
+        "sha256": "297b8bdeca6964258cfc3b2143a71b3f8934d0eae0cefbd378507751954ac4f7",
+        "size": 119278,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_greek-json.js"
+      },
+      "steamui/localization/friendsui_hungarian-json.js": {
+        "sha256": "a80f89a2e9c5ffa3afeca51d56f292465d52d45feb220658f93723854c2a2999",
+        "size": 84794,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_hungarian-json.js"
+      },
+      "steamui/localization/friendsui_indonesian-json.js": {
+        "sha256": "e22d37f4f3f503faaa417c312c5e204f55897342db45604e445478a4b91750ae",
+        "size": 79842,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_indonesian-json.js"
+      },
+      "steamui/localization/friendsui_italian-json.js": {
+        "sha256": "94b817bc62b85f1a8e119226a835f01bfd572d15f790da4441860b9e39a6be77",
+        "size": 82514,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_italian-json.js"
+      },
+      "steamui/localization/friendsui_japanese-json.js": {
+        "sha256": "4828eb3653a73fe3ced9e7b7fcdb340ff9443856877bc7cc785dc8911f3da15a",
+        "size": 93876,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_japanese-json.js"
+      },
+      "steamui/localization/friendsui_koreana-json.js": {
+        "sha256": "8ef925c4734eb6072e87d643e4017f770b983f7a9fc0321bb885e86493fbf43f",
+        "size": 85323,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_koreana-json.js"
+      },
+      "steamui/localization/friendsui_latam-json.js": {
+        "sha256": "81fada107526cace52eedd3b4c72943b5291cd1cb4698e2f8bd6045e9b7c1512",
+        "size": 82646,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_latam-json.js"
+      },
+      "steamui/localization/friendsui_malay-json.js": {
+        "sha256": "ed94363fa96680fa3c39cabfe34dc6c1d72baabbb17ecc7c469b46d9c77ed4f3",
+        "size": 82468,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_malay-json.js"
+      },
+      "steamui/localization/friendsui_norwegian-json.js": {
+        "sha256": "27e616f90108be12322a46be41f5eaa43cca86c8ccaff9fcdce92396516df2f8",
+        "size": 79185,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_norwegian-json.js"
+      },
+      "steamui/localization/friendsui_polish-json.js": {
+        "sha256": "7e3109647651491ecc88c2c884b8a97f6ca5f57f2114190c9958970bae588c62",
+        "size": 84243,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_polish-json.js"
+      },
+      "steamui/localization/friendsui_portuguese-json.js": {
+        "sha256": "96ec55108ca99777ae9ae0a4bfb63540152d06cf25ef9018b10d9aae3cf02fa9",
+        "size": 81452,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_portuguese-json.js"
+      },
+      "steamui/localization/friendsui_romanian-json.js": {
+        "sha256": "ddc553d69e0d91951444895474d2bfb06f786977a4fbc2b71aa39acb69900345",
+        "size": 85195,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_romanian-json.js"
+      },
+      "steamui/localization/friendsui_russian-json.js": {
+        "sha256": "fbc3e2f5ed6e161916440be4815be5f91d0c268e6b2f4f3224ac70a9bd192ae3",
+        "size": 109081,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_russian-json.js"
+      },
+      "steamui/localization/friendsui_sc_schinese-json.js": {
+        "sha256": "44fe829b0fe2d1f8adfb225660fffdbba07a88448089eaca266817f9f143d82f",
+        "size": 7020,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_sc_schinese-json.js"
+      },
+      "steamui/localization/friendsui_schinese-json.js": {
+        "sha256": "c0320a4755b338797e31bb3842445b120ab2dc464cb36a86dd2874924a092f81",
+        "size": 73957,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_schinese-json.js"
+      },
+      "steamui/localization/friendsui_spanish-json.js": {
+        "sha256": "0e5c79ae38dafe340a7cc22a12b6ed3939eb2b3830973e81bcbd3f72efd3c0a1",
+        "size": 83044,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_spanish-json.js"
+      },
+      "steamui/localization/friendsui_swedish-json.js": {
+        "sha256": "282edf75628d133ecf74f60932bda73820eee1932004022cbdea676ec593dc49",
+        "size": 79464,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_swedish-json.js"
+      },
+      "steamui/localization/friendsui_tchinese-json.js": {
+        "sha256": "1db67b12388360c0d2528d886700ed646e3110fccfcb9792e2be78b26068da92",
+        "size": 74588,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_tchinese-json.js"
+      },
+      "steamui/localization/friendsui_thai-json.js": {
+        "sha256": "08dda59e214f08d30d77f13c411d77f295412c4ba5f501fffc339a6ff35bd245",
+        "size": 135210,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_thai-json.js"
+      },
+      "steamui/localization/friendsui_turkish-json.js": {
+        "sha256": "457ffac5a05af2861aaab804d6e7784f6b02f0d5bc5abe576cda67fdca747951",
+        "size": 83687,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_turkish-json.js"
+      },
+      "steamui/localization/friendsui_ukrainian-json.js": {
+        "sha256": "e6ac828d45f05724bb244b854d3ecf93846d28e46fbaf534337c14373fdf0dcc",
+        "size": 111068,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_ukrainian-json.js"
+      },
+      "steamui/localization/friendsui_vietnamese-json.js": {
+        "sha256": "7d7de10e5ce8bc2da4812eb49fde6953a82d2f5767eef834c1f1c879103a8cd9",
+        "size": 87602,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/friendsui_vietnamese-json.js"
+      },
+      "steamui/localization/reducedui_english-json.js": {
+        "sha256": "679e4567872ab17a1235ebf795afc9ed51bdd53b2dba855dfc52f3858e1b410e",
+        "size": 552,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/reducedui_english-json.js"
+      },
+      "steamui/localization/reducedui_sc_schinese-json.js": {
+        "sha256": "8494547bffdf9645f837930bd21111ddc5ecc2e0d4377ef7b17174cb93623d90",
+        "size": 609,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/reducedui_sc_schinese-json.js"
+      },
+      "steamui/localization/shared_arabic-json.js": {
+        "sha256": "1d3a6285e74b3c5e01285f630d5fe4f4c8ffc7dacbb17ef1224a0c135bd68141",
+        "size": 360982,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_arabic-json.js"
+      },
+      "steamui/localization/shared_brazilian-json.js": {
+        "sha256": "88d1e97d70d29d8384ceaf6dca28dc2017063ad4f95ccfd582e85f61d3038077",
+        "size": 302836,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_brazilian-json.js"
+      },
+      "steamui/localization/shared_bulgarian-json.js": {
+        "sha256": "3266fdad86a3a8eb792bc72fd70aeaa001e2934198a359211652fd22e03d51ad",
+        "size": 438597,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_bulgarian-json.js"
+      },
+      "steamui/localization/shared_czech-json.js": {
+        "sha256": "99aa4c5d9d814d09de539854ec231e703bca1347f89868a994676e4360524246",
+        "size": 310311,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_czech-json.js"
+      },
+      "steamui/localization/shared_danish-json.js": {
+        "sha256": "49743dbb5f034256572177b0843919fb4456ad62d757bb3cbc009587eb250a0a",
+        "size": 292302,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_danish-json.js"
+      },
+      "steamui/localization/shared_dutch-json.js": {
+        "sha256": "57dcb97c1b3cf525d9a9a02f814a59cf1cad625e68a72ecfec313d2affb21813",
+        "size": 304655,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_dutch-json.js"
+      },
+      "steamui/localization/shared_english-json.js": {
+        "sha256": "baf8e6694495843bb69587c8e487ac91a4c431b49f2995a26a8a9b0786b80ae8",
+        "size": 280896,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_english-json.js"
+      },
+      "steamui/localization/shared_finnish-json.js": {
+        "sha256": "d1dbe0b91686e73d31a4c6a446bb50500ab4b63346d420aacfeb388248b8a1e3",
+        "size": 293552,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_finnish-json.js"
+      },
+      "steamui/localization/shared_french-json.js": {
+        "sha256": "164f30814e9f58e5388ce4af0f96c2e537749c8d155c2abe44a64cfd051486c2",
+        "size": 324662,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_french-json.js"
+      },
+      "steamui/localization/shared_german-json.js": {
+        "sha256": "0443c91bdb9c7ac1c7c43296c63e268f4752c1a61c7a394c970edca6fad57349",
+        "size": 314663,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_german-json.js"
+      },
+      "steamui/localization/shared_greek-json.js": {
+        "sha256": "b7d20386d933719960f7b7a76e253ae3525bfb3695369140693915f416e2e3e7",
+        "size": 450286,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_greek-json.js"
+      },
+      "steamui/localization/shared_hungarian-json.js": {
+        "sha256": "74cd0735bf86541192ef34779edd5746ba534a1299f5103bd096967520dcc39e",
+        "size": 311457,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_hungarian-json.js"
+      },
+      "steamui/localization/shared_indonesian-json.js": {
+        "sha256": "8a68982c059fd60e0ebeb9251fad17181b24e18e843270a01e335278538cdfac",
+        "size": 294490,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_indonesian-json.js"
+      },
+      "steamui/localization/shared_italian-json.js": {
+        "sha256": "714b626f88913a5d8a70f495451ee4392ab0b9b04a1578e42d721c659e55180b",
+        "size": 311585,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_italian-json.js"
+      },
+      "steamui/localization/shared_japanese-json.js": {
+        "sha256": "14027c6be55711677f04d1feefc70c6d3aafb191bf0ee927639a2c6b40cffab4",
+        "size": 350884,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_japanese-json.js"
+      },
+      "steamui/localization/shared_koreana-json.js": {
+        "sha256": "d09b0c638cf3de9b1190a57fcf67b63d5912d83c3a9b31a45d29d79ddf8e9962",
+        "size": 320917,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_koreana-json.js"
+      },
+      "steamui/localization/shared_latam-json.js": {
+        "sha256": "afb91905a42a95be9c7ee926af357df2bd3040268f5d9d5fec863eef59e3c6b0",
+        "size": 312303,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_latam-json.js"
+      },
+      "steamui/localization/shared_malay-json.js": {
+        "sha256": "70894a5da7ffec92a8ab130acd8a3c22a69f157eb4bb48ffa49e5f142d60ed4f",
+        "size": 299689,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_malay-json.js"
+      },
+      "steamui/localization/shared_norwegian-json.js": {
+        "sha256": "597d85e006c8dd4e5662c3490bbbd09cbff5a4fdcb124c1030705c596c86d0ac",
+        "size": 291403,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_norwegian-json.js"
+      },
+      "steamui/localization/shared_polish-json.js": {
+        "sha256": "0fdea723f2a44c77158cbf2c1605e394dbc69aa27fe5dd672d975ef3ccc4109f",
+        "size": 311217,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_polish-json.js"
+      },
+      "steamui/localization/shared_portuguese-json.js": {
+        "sha256": "043a1c2b5ea826e38cab7d8be3124209d1ffaee8e494353f45b57728787c219a",
+        "size": 307374,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_portuguese-json.js"
+      },
+      "steamui/localization/shared_romanian-json.js": {
+        "sha256": "8445fe3e4973dd95e70465dd0df68638392dfdf573477adec85afa517f3c77ab",
+        "size": 322401,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_romanian-json.js"
+      },
+      "steamui/localization/shared_russian-json.js": {
+        "sha256": "70960cfba5dce96944bcd1ad818845bb2b61c87de23bf6bb2f04eda630db95c1",
+        "size": 414320,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_russian-json.js"
+      },
+      "steamui/localization/shared_sc_schinese-json.js": {
+        "sha256": "7983b0de50cfdc0eb681f25d4b146a4fac9d773072c1d9345b39e252092ffd40",
+        "size": 26747,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_sc_schinese-json.js"
+      },
+      "steamui/localization/shared_schinese-json.js": {
+        "sha256": "13cd34a97e57161676894c1548395eb0db6c25a6db164ff3635550e7e1eb3d43",
+        "size": 275421,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_schinese-json.js"
+      },
+      "steamui/localization/shared_spanish-json.js": {
+        "sha256": "fb4273b788e519bc4656c3171401b9c40804f01e0ff1b4597b02af821299b95d",
+        "size": 313805,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_spanish-json.js"
+      },
+      "steamui/localization/shared_swedish-json.js": {
+        "sha256": "a99b33ac8ee757976dd4483387485e0316d665c3f0c952811b1fdb4d6ea95e00",
+        "size": 295040,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_swedish-json.js"
+      },
+      "steamui/localization/shared_tchinese-json.js": {
+        "sha256": "8cba38887acf6740e7607894417b7238b02a18fdf0daa29462a3a3e5b78aede1",
+        "size": 277792,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_tchinese-json.js"
+      },
+      "steamui/localization/shared_thai-json.js": {
+        "sha256": "ad63a79ec8b1b5e25422c3727ed595ac9b1ef5771d224d023ee29029a1ce200a",
+        "size": 523315,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_thai-json.js"
+      },
+      "steamui/localization/shared_turkish-json.js": {
+        "sha256": "bc3ed18b4753e2f8357d30f50be14f076e50e27a4ff8c9a084b4bdec948c35da",
+        "size": 309142,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_turkish-json.js"
+      },
+      "steamui/localization/shared_ukrainian-json.js": {
+        "sha256": "cf2fc703db47538f6d74e271a7ef99f769fb73db3919f89e90406e2b35d0079c",
+        "size": 412286,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_ukrainian-json.js"
+      },
+      "steamui/localization/shared_vietnamese-json.js": {
+        "sha256": "6dde6229b4b8567e4ab6c1f5a91a88407816f0ea9aeace163baabf27f794acc7",
+        "size": 331511,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/shared_vietnamese-json.js"
+      },
+      "steamui/localization/steampops_arabic-json.js": {
+        "sha256": "3f86c11d3dfe9500deebbf5fd493f1a11a11ef3759eafa689b3de4b9842d983f",
+        "size": 11280,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_arabic-json.js"
+      },
+      "steamui/localization/steampops_brazilian-json.js": {
+        "sha256": "e48b09697857155b68b21b91f9685f44dcd5205f8ddf8dead793783eea8fe8be",
+        "size": 9096,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_brazilian-json.js"
+      },
+      "steamui/localization/steampops_bulgarian-json.js": {
+        "sha256": "6d1d6f23e86d4382ff80fe5d139041077aaa8c3929a85cee8dcb71ca378a2c2c",
+        "size": 11628,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_bulgarian-json.js"
+      },
+      "steamui/localization/steampops_czech-json.js": {
+        "sha256": "200c5ac7478ed3bd2c403f26013d42f36c6812b79a46d34ba6df6d0ef7387cbc",
+        "size": 9148,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_czech-json.js"
+      },
+      "steamui/localization/steampops_danish-json.js": {
+        "sha256": "321811232dd14de3bf130fef1ce7362cbb70489898c53be668e2d4fd9dd2efad",
+        "size": 8788,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_danish-json.js"
+      },
+      "steamui/localization/steampops_dutch-json.js": {
+        "sha256": "bace43d9211dc03a6ea4121452c8f799d615d331873d0301d200f5594d1226a9",
+        "size": 8907,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_dutch-json.js"
+      },
+      "steamui/localization/steampops_english-json.js": {
+        "sha256": "e16c3877a8263b50efbe82d4a06d31735b3a7f45a0ae79b9d0d907548c65d204",
+        "size": 8645,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_english-json.js"
+      },
+      "steamui/localization/steampops_finnish-json.js": {
+        "sha256": "7648aa4c5468a88fe9c9137c2a7f5ca770dd24bcef9d25a369f4ce2d4915ad3f",
+        "size": 9038,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_finnish-json.js"
+      },
+      "steamui/localization/steampops_french-json.js": {
+        "sha256": "5dfca43c717f68efe3b623f310a4a5cbb0d8d84bb266daa851008edeb745c317",
+        "size": 8793,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_french-json.js"
+      },
+      "steamui/localization/steampops_german-json.js": {
+        "sha256": "f0827cb845486cc2dd93996b253a1437d4be9134ca959c8084d2f17138acf4e7",
+        "size": 10143,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_german-json.js"
+      },
+      "steamui/localization/steampops_greek-json.js": {
+        "sha256": "6bfe816151b52ae9243514f9b3fb81bfe0f8499a24ed96eaf86d5c2a531b78c2",
+        "size": 11789,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_greek-json.js"
+      },
+      "steamui/localization/steampops_hungarian-json.js": {
+        "sha256": "dfe0c7101a348bd9c74f388bc8a1e040e4b8652adadce2f6f105beca65e1bda0",
+        "size": 9201,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_hungarian-json.js"
+      },
+      "steamui/localization/steampops_indonesian-json.js": {
+        "sha256": "e516aee4217681d25f98d97432c862a322ca419cd3d7eecc4840e67ed5c6cdf4",
+        "size": 8792,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_indonesian-json.js"
+      },
+      "steamui/localization/steampops_italian-json.js": {
+        "sha256": "e4f87ac2d84f79381307432e5a76081a5560e3455665c4e3f1bd274c32b1ce17",
+        "size": 8721,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_italian-json.js"
+      },
+      "steamui/localization/steampops_japanese-json.js": {
+        "sha256": "d88e0c9ac51f5f646ba2efa325c8a879a228e06c62f5992a91b2c79052dddfd1",
+        "size": 10523,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_japanese-json.js"
+      },
+      "steamui/localization/steampops_koreana-json.js": {
+        "sha256": "413543d367b6462bb57d5fd102e858f01c3b991d86306dbe8d4bf4bf217fe602",
+        "size": 9323,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_koreana-json.js"
+      },
+      "steamui/localization/steampops_latam-json.js": {
+        "sha256": "f2cd5dafecbcb63c8e2d65d557985a1cd3243619a9181e0525eea30ebdefd015",
+        "size": 8942,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_latam-json.js"
+      },
+      "steamui/localization/steampops_malay-json.js": {
+        "sha256": "d883efae7c3da4e1bdb0a51932c78afeb03000388ac90fdb6c8901ba5e68cd25",
+        "size": 8669,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_malay-json.js"
+      },
+      "steamui/localization/steampops_norwegian-json.js": {
+        "sha256": "ba8b856a53c8807e03990a8d733f73a9c942a5f9ab6e9e1f4a89f74eef1746ef",
+        "size": 9172,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_norwegian-json.js"
+      },
+      "steamui/localization/steampops_polish-json.js": {
+        "sha256": "51163b771aeadd63c8a417bd011aa7febfbab6d4788a7a9c0567a063d1ff34ca",
+        "size": 9787,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_polish-json.js"
+      },
+      "steamui/localization/steampops_portuguese-json.js": {
+        "sha256": "de67002a128e7abef9b8854acf21b33c9760911eb08119b4877a3fd9fa3f0687",
+        "size": 8839,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_portuguese-json.js"
+      },
+      "steamui/localization/steampops_romanian-json.js": {
+        "sha256": "d07ad7f3700449459ce5d3fd9453547cbde64a43ada45edd0ed04fc79adf5c50",
+        "size": 9041,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_romanian-json.js"
+      },
+      "steamui/localization/steampops_russian-json.js": {
+        "sha256": "3fb32bd10f7ebc7b42186fafd71b60bd30734e56131c8eb3af7410781af6f7da",
+        "size": 12102,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_russian-json.js"
+      },
+      "steamui/localization/steampops_schinese-json.js": {
+        "sha256": "8a8f4d2ae40cae91503d7fd977615fe448526235daff489bb5714e78dcac96e3",
+        "size": 8747,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_schinese-json.js"
+      },
+      "steamui/localization/steampops_spanish-json.js": {
+        "sha256": "a7b751a460985471cd22372e70f1b3ee3746fb5b9967c949e6991fccab4d841f",
+        "size": 9296,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_spanish-json.js"
+      },
+      "steamui/localization/steampops_swedish-json.js": {
+        "sha256": "abd2c94db36214e48cd1f3d3fa7692a79ecb40ca3d32b86bc6dbbceb8e0ccee1",
+        "size": 9006,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_swedish-json.js"
+      },
+      "steamui/localization/steampops_tchinese-json.js": {
+        "sha256": "c183b50b97750f58d517843e753e1d11d06c123d69e44e680acb6995af4def28",
+        "size": 8974,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_tchinese-json.js"
+      },
+      "steamui/localization/steampops_thai-json.js": {
+        "sha256": "39a1821dd2969ef85df8e9000bb80f458afbdb37eca18da65910713d81d496f0",
+        "size": 15446,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_thai-json.js"
+      },
+      "steamui/localization/steampops_turkish-json.js": {
+        "sha256": "84ae235cf755ea868ebe5a53b443c7bf839fd244d85443fa6599efb5509e5448",
+        "size": 8946,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_turkish-json.js"
+      },
+      "steamui/localization/steampops_ukrainian-json.js": {
+        "sha256": "882949a6cebfbe41ec33772d8ad9ea03f13defce4147d50f2fa58f4ad36ba832",
+        "size": 12256,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_ukrainian-json.js"
+      },
+      "steamui/localization/steampops_vietnamese-json.js": {
+        "sha256": "4149c272a56d7b998df9446949fd065cd58c013b2f63a943b4d49a1f7fdddac9",
+        "size": 9450,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steampops_vietnamese-json.js"
+      },
+      "steamui/localization/steamui_arabic-json.js": {
+        "sha256": "b4bf91680492b04f8ee52ae7c7737f72bc47aa8f6e9ee3dd0f6a54ec5edf4bb7",
+        "size": 1083803,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_arabic-json.js"
+      },
+      "steamui/localization/steamui_brazilian-json.js": {
+        "sha256": "72c26239b04d2166d059f0b0b5a1cdb5e22fd81ffa6bca8b05ba139e1044530d",
+        "size": 892435,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_brazilian-json.js"
+      },
+      "steamui/localization/steamui_bulgarian-json.js": {
+        "sha256": "d7e60e553a7089fe7c7f5f854e618ecc4e2b9aed6968b524dd474bc498c06970",
+        "size": 1299337,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_bulgarian-json.js"
+      },
+      "steamui/localization/steamui_czech-json.js": {
+        "sha256": "7cee5626e3c24c2cec1bfacad53e0da6d44fdebbfaf30788d08cb1828f989f16",
+        "size": 911612,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_czech-json.js"
+      },
+      "steamui/localization/steamui_danish-json.js": {
+        "sha256": "2f6550682c4de81f67ceb80da3c76eff4d4e792121d226f5b754cb1e9f1506dc",
+        "size": 861827,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_danish-json.js"
+      },
+      "steamui/localization/steamui_dutch-json.js": {
+        "sha256": "197a8e0029b8252f1c7b992912d3c82cc28b43ca81398b3bc95be7b0d6fe2141",
+        "size": 893224,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_dutch-json.js"
+      },
+      "steamui/localization/steamui_english-json.js": {
+        "sha256": "ce3298fab44ba9b3a7d07bad5ddbf6ce32b667a75fc08c64dce3f48d34bd732f",
+        "size": 822757,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_english-json.js"
+      },
+      "steamui/localization/steamui_finnish-json.js": {
+        "sha256": "54223c7445020e7a9673fa5ccb6d8c55dd495a504aabf9a5f7bdbb682de453f3",
+        "size": 868110,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_finnish-json.js"
+      },
+      "steamui/localization/steamui_french-json.js": {
+        "sha256": "d1fb200637451bed489de74a8517cfc78d912e6843443dabf9ed4d1eb4e9d550",
+        "size": 953600,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_french-json.js"
+      },
+      "steamui/localization/steamui_german-json.js": {
+        "sha256": "5b3762e5e83062a9d6ae3f92b80cb6c0738cf43b4323196b57322760c7a77cf0",
+        "size": 912828,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_german-json.js"
+      },
+      "steamui/localization/steamui_greek-json.js": {
+        "sha256": "adfd759494f7ba7dae57daee74bf9603351c3405c2e45a40decb19ad46ab39a1",
+        "size": 1318090,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_greek-json.js"
+      },
+      "steamui/localization/steamui_hungarian-json.js": {
+        "sha256": "5481727bdbd508dbc8379a87c4a82319408b88727d2a449b94575800a2867c9f",
+        "size": 911370,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_hungarian-json.js"
+      },
+      "steamui/localization/steamui_indonesian-json.js": {
+        "sha256": "6d8a082821cbdad714d4d8f6d83d75f152310a33045a1a925ee2f3b8a3766144",
+        "size": 853108,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_indonesian-json.js"
+      },
+      "steamui/localization/steamui_italian-json.js": {
+        "sha256": "5ecb28d1ff7ed2d641f94c6f1a9172324c25a53605df3c234c4c2d82ac246cb8",
+        "size": 915763,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_italian-json.js"
+      },
+      "steamui/localization/steamui_japanese-json.js": {
+        "sha256": "d8099adbde14f13d0054fa1eb2d215f197a2a3b9c39f6a32db26309ca78150e7",
+        "size": 1014436,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_japanese-json.js"
+      },
+      "steamui/localization/steamui_koreana-json.js": {
+        "sha256": "97f098590c85b1ec6bb08f66890cfb3565c01b5394340dcb5739bc0f5dac36e6",
+        "size": 926050,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_koreana-json.js"
+      },
+      "steamui/localization/steamui_latam-json.js": {
+        "sha256": "bbf2a2db45019793f44fc8b74de1344441bc8da32fa796409180e9420b33b062",
+        "size": 921672,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_latam-json.js"
+      },
+      "steamui/localization/steamui_malay-json.js": {
+        "sha256": "edf91e038be7d36c6c59378151f00d1e58badddd13a8ee33ecec8c99606efb26",
+        "size": 875588,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_malay-json.js"
+      },
+      "steamui/localization/steamui_norwegian-json.js": {
+        "sha256": "f22a608d284b63e567c08040fb1e56d9c58453f6ee1b4336702815ebc19ed1a6",
+        "size": 843690,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_norwegian-json.js"
+      },
+      "steamui/localization/steamui_polish-json.js": {
+        "sha256": "c6bb3e7a7d6019aa470d320a3818d8236768465d08ddf903ae1ed9e099d33f5b",
+        "size": 911406,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_polish-json.js"
+      },
+      "steamui/localization/steamui_portuguese-json.js": {
+        "sha256": "3976ba6c32e8fe5f5f77a658901def8ab0192d7144b3989df4c4ba59dcea825b",
+        "size": 894649,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_portuguese-json.js"
+      },
+      "steamui/localization/steamui_romanian-json.js": {
+        "sha256": "8cbdfd075d753544fe85b3729edf8fc01245a8cd00518299b01b3c7b17050a5c",
+        "size": 943970,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_romanian-json.js"
+      },
+      "steamui/localization/steamui_russian-json.js": {
+        "sha256": "90f1b32ac9b1dc7916eee6c0f05596a771feec4294f38c52d6c5d559acad34ef",
+        "size": 1184595,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_russian-json.js"
+      },
+      "steamui/localization/steamui_sc_schinese-json.js": {
+        "sha256": "4014ca791de905c8dd4f29341b376f0c46b880d0210fa93b3589b773ec89d698",
+        "size": 61318,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_sc_schinese-json.js"
+      },
+      "steamui/localization/steamui_schinese-json.js": {
+        "sha256": "31ba04b0b0248ae2739dc2d91454920c85824cf77d5d1f4f41fa846bc2ddb7b9",
+        "size": 789844,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_schinese-json.js"
+      },
+      "steamui/localization/steamui_spanish-json.js": {
+        "sha256": "46c3cb8f5ae76add004ae56f8fd62f8049d6a09d5f081b9d62bba4af25d3d3d4",
+        "size": 920824,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_spanish-json.js"
+      },
+      "steamui/localization/steamui_swedish-json.js": {
+        "sha256": "93c47b1c1ea7e4fb02e5fa75860ab9637b8133014e3d46d74b8358e124ff3dcf",
+        "size": 858890,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_swedish-json.js"
+      },
+      "steamui/localization/steamui_tchinese-json.js": {
+        "sha256": "68ff57429d878bfdba92749c2f1944da2d792e020bc52c24fc09d5b5286df0b8",
+        "size": 794704,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_tchinese-json.js"
+      },
+      "steamui/localization/steamui_thai-json.js": {
+        "sha256": "7c379312a3fe393b22144b4d824cceecd77ff5431223f9ffb2802c6653b92a24",
+        "size": 1501975,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_thai-json.js"
+      },
+      "steamui/localization/steamui_turkish-json.js": {
+        "sha256": "baf80333c49ae40dc1ef917c6a0c763aae7a439e7e457981573d83021c89ed8a",
+        "size": 899831,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_turkish-json.js"
+      },
+      "steamui/localization/steamui_ukrainian-json.js": {
+        "sha256": "e42e3ee5fc60fce1f31f046fb69e5cfa13fd9b5e752c02cbcc6944f0031272a2",
+        "size": 1220291,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_ukrainian-json.js"
+      },
+      "steamui/localization/steamui_vietnamese-json.js": {
+        "sha256": "25f6a468746f6f1f0f6be17f5e0b4cb803108fb0233d70ff225d3690f64c3993",
+        "size": 958019,
+        "package": "steamui_websrc_all",
+        "member": "steamui/localization/steamui_vietnamese-json.js"
+      },
+      "steamui/noisegate-audio-worklet.js": {
+        "sha256": "f7cb3a75bb26756ba970c29944d7bc6e11134ababb4e4299af246a1c52584e8d",
+        "size": 3394,
+        "package": "steamui_websrc_all",
+        "member": "steamui/noisegate-audio-worklet.js"
+      },
+      "steamui/sp.js": {
+        "sha256": "d1c3f81b7b7f1832b859c21c3c5c7e1b2303b81330fc9f61e2df53ebe30c3785",
+        "size": 2179,
+        "package": "steamui_websrc_all",
+        "member": "steamui/sp.js"
+      }
+    },
+    "source": "release-signed-official-https"
+  },
+  "signature": "3x28kirlDGNzzbce5sx/UPb4nJDlJrhdNcLhZEoRthtbnkP5kzSr3VCC4yvMElX2L2u5w9X9htrHiP1jEXAgCA=="
+}

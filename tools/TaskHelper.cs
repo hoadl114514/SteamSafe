@@ -13,7 +13,7 @@ class TaskHelper {
    string sid=new SecurityIdentifier(args[1]).Value;
    if(sid!=WindowsIdentity.GetCurrent().User.Value)throw new Exception("跨账号提权不支持当前用户最高权限自启");
    dynamic service=Activator.CreateInstance(Type.GetTypeFromProgID("Schedule.Service"));service.Connect();dynamic root=service.GetFolder("\\");
-   if(args[0]=="disable") {try{root.DeleteTask("SteamSafeBeta",0);}catch(System.Runtime.InteropServices.COMException e){if(e.ErrorCode!=unchecked((int)0x80070002))throw;}return 0;}
+   if(args[0]=="disable") {try{root.DeleteTask("SteamSafeBeta",0);}catch(Exception e){if(!UninstallMaintenance.IsMissing(e))throw;}return 0;}
    if(args[0]!="enable")throw new Exception("未知操作");
    string executable=SecurityElement.Escape(Path.Combine(folder,"SteamSafe.exe"));
    string xml="<Task version=\"1.2\" xmlns=\"http://schemas.microsoft.com/windows/2004/02/mit/task\"><Triggers><LogonTrigger><Enabled>true</Enabled><UserId>"+sid+"</UserId></LogonTrigger></Triggers><Principals><Principal id=\"User\"><UserId>"+sid+"</UserId><LogonType>InteractiveToken</LogonType><RunLevel>HighestAvailable</RunLevel></Principal></Principals><Settings><MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy><DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries><StopIfGoingOnBatteries>false</StopIfGoingOnBatteries><ExecutionTimeLimit>PT0S</ExecutionTimeLimit></Settings><Actions Context=\"User\"><Exec><Command>"+executable+"</Command><Arguments>--background</Arguments></Exec></Actions></Task>";

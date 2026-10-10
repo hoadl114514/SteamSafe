@@ -22,8 +22,8 @@ distribution=root/'dist/SteamSafe'
 exe=distribution/'SteamSafe.exe'
 assert b'level="requireAdministrator"' in exe.read_bytes()
 verified=verify_distribution(distribution,CERT_SHA256)
-assert CERT_SHA256 in certificate_digest(root/'dist/SteamSafe-v0.1.2.2-Beta-Setup.exe')
-assert (authenticode_status(root/'dist/SteamSafe-v0.1.2.2-Beta-Setup.exe')&0xffffffff) in (0,0x800B0109)
+assert CERT_SHA256 in certificate_digest(root/'dist/SteamSafe-v0.1.2.3-Beta-Setup.exe')
+assert (authenticode_status(root/'dist/SteamSafe-v0.1.2.3-Beta-Setup.exe')&0xffffffff) in (0,0x800B0109)
 for name, executable in (("qa-same-code", root / "build/qa-release/SteamSafe.exe"),):
     output = root / "test-output" / ("release-v0.1.2-" + name)
     state = output / "state"

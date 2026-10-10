@@ -1,15 +1,15 @@
-<div align="center">
+﻿<div align="center">
 
 # SteamSafe
 
 **为 Steam 客户端增加完整性检查、后台监测与异常修复。**
 
-![版本](https://img.shields.io/badge/version-0.1.2.2--beta-2ea99c)
+![版本](https://img.shields.io/badge/version-0.1.2.3--beta-2ea99c)
 ![平台](https://img.shields.io/badge/platform-Windows%2010%2F11%20x64-0078D4)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB)
 ![许可证](https://img.shields.io/badge/license-Apache--2.0-blue)
 
-[下载安装包](https://github.com/hoadl114514/SteamSafe/releases/tag/v0.1.2.2-beta) · [使用说明](#快速开始) · [源码构建](#开发与构建) · [反馈问题](https://github.com/hoadl114514/SteamSafe/issues)
+[下载安装包](https://github.com/hoadl114514/SteamSafe/releases/tag/v0.1.2.3-beta) · [使用说明](#快速开始) · [源码构建](#开发与构建) · [反馈问题](https://github.com/hoadl114514/SteamSafe/issues)
 
 </div>
 
@@ -39,11 +39,12 @@ SteamSafe 是一个独立的 Windows 桌面工具。它结合官方更新文件�
 
 ### 1. 下载并安装
 
-在 [Beta v0.1.2.2 Release](https://github.com/hoadl114514/SteamSafe/releases/tag/v0.1.2.2-beta) 下载：
+在 [Beta v0.1.2.3 Release](https://github.com/hoadl114514/SteamSafe/releases/tag/v0.1.2.3-beta) 下载：
 
-- `SteamSafe-v0.1.2.2-Beta-Setup.exe`：安装程序。
+- `SteamSafe-v0.1.2.3-Beta-Setup.exe`：安装程序。
+- `SteamSafe-Uninstall-Repair.exe`：旧 Steam Sentinel／SteamSafe 卸载失败时使用，启动后选择已登记的安装，再点击卸载。修复器必须从安装目录之外运行。
 - `SHA256SUMS.txt`：下载文件的 SHA-256 校验和。
-- `SteamSafe-v0.1.2.2-Beta-source.zip`：对应发布提交的源码包。
+- `SteamSafe-v0.1.2.3-Beta-source.zip`：对应发布提交的源码包。
 
 仓库目前为私有，下载需要登录有访问权限的 GitHub 账号。
 
@@ -100,6 +101,12 @@ flowchart TD
 
 修复文件不意味着感染来源已清除或账号已经安全。如果恶意代码曾执行，应在可信设备处理密码、会话授权和登录记录。界面提供固定的官方账号安全指引入口。
 
+## v0.1.2.3 卸载修复
+
+修复未创建自启任务时卸载出现 `0x80070002` 的问题：Windows 会将缺失任务映射为 `FileNotFoundException`，现在按缺失资源处理。快捷方式或发行文件已移除时可继续卸载；权限错误仍会报错。发行清单在删除前完整验证，失败对话框显示具体步骤和错误码。
+
+旧版本报错时，从本版 Release 下载 `SteamSafe-Uninstall-Repair.exe`，在下载目录运行，选择对应的 Steam Sentinel 或 SteamSafe 安装。默认保留隔离备份。仅重新安装新版不会替换旧安装目录里的卸载器。
+
 ## 升级、数据与卸载
 
 **升级：**先关闭旧版自启并从托盘退出，再安装新版、重新检查并设置自启。从旧名称 Steam Sentinel 升级时，SteamSafe 使用独立的数据目录与任务；旧版备份不会自动迁移或删除。
@@ -151,7 +158,7 @@ py -3.12 -m venv .venv
 .\build.ps1
 ```
 
-首次刷新基线需要访问官方更新 CDN。输出安装器位于 `dist/SteamSafe-v0.1.2.2-Beta-Setup.exe`。
+首次刷新基线需要访问官方更新 CDN。输出安装器位于 `dist/SteamSafe-v0.1.2.3-Beta-Setup.exe`。
 
 发行者的私钥没有上传到仓库。从源码构建会生成自己的 Ed25519 密钥和自签名代码签名证书；不能复用发行者签名。`.release-keys/` 中的私钥、PFX 和口令必须保密，不应进入 Git、安装包或源码包。
 
@@ -166,7 +173,7 @@ py -3.12 -m venv .venv
 
 ## 验证与反馈
 
-当前版本通过 68 项安全回归、7 项安装路径约束检查、打包后诊断副本的界面启动及发行签名检查。真实 UAC 安装、系统登记、计划任务注册和卸载写入流程仍需在受控 Windows 机器验收。详见 [安装器验收范围](QA-installer-v0.1.2.2.md)。
+当前版本通过 68 项安全回归、21 项原生卸载回归、7 项安装路径约束检查、打包后诊断副本的界面启动及发行签名检查。真实 UAC 安装、系统登记、计划任务注册和卸载写入流程仍需在受控 Windows 机器验收。详见 [卸载修复验收](QA-uninstall-v0.1.2.3.md) 和 [此前安装器验收范围](QA-installer-v0.1.2.2.md)。
 
 在 [Issues](https://github.com/hoadl114514/SteamSafe/issues) 反馈时，请附 Windows 版本、Steam 正式版版本、SteamSafe 版本、复现步骤及脱敏日志。误报反馈请说明是否使用客户端插件或修改配置。
 

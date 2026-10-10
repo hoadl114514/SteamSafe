@@ -124,7 +124,7 @@ def main():
             layout = QVBoxLayout(widget)
             layout.setContentsMargins(28, 24, 28, 24)
             layout.setSpacing(16)
-            title = QLabel("STEAM SENTINEL")
+            title = QLabel("STEAMSAFE")
             title.setObjectName("title")
             layout.addWidget(title)
             subtitle = QLabel("启动前校验  ·  版本感知检查  ·  隔离与恢复")

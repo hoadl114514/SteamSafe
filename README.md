@@ -46,7 +46,7 @@ SteamSafe 是一个独立的 Windows 桌面工具。它结合官方更新文件�
 - `SHA256SUMS.txt`：下载文件的 SHA-256 校验和。
 - `SteamSafe-v0.1.2.3-Beta-source.zip`：对应发布提交的源码包。
 
-仓库目前为私有，下载需要登录有访问权限的 GitHub 账号。
+安装包和源码可在上方 GitHub Release 页面下载。
 
 运行安装器并允许 UAC，选择安装目录；桌面快捷方式和安装后启动均可选。默认安装在 Program Files。自定义目录及已有父目录须满足管理员控制要求，网络路径、重解析点、Windows 和游戏数据目录会被拒绝。
 

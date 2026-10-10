@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Win32;
 
-[assembly: AssemblyVersion("0.1.2.5")]
+[assembly: AssemblyVersion("0.1.2.6")]
 class UninstallForm : Form {
     const string BuildProductId = "__PRODUCT_ID__";
     string productId = BuildProductId, folder, entry = "SteamSafe.exe";

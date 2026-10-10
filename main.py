@@ -263,6 +263,7 @@ def main():
 
         def enqueue(self, command):
             self.save_path()
+            engine.auto_confirmed_root = None
             self.change('root_confirmed',True)
             self.busy(True)
             engine.commands.put(command)

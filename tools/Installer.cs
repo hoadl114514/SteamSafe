@@ -1,12 +1,12 @@
 ﻿using System;using System.IO;using System.IO.Compression;using System.Reflection;using System.Diagnostics;using System.Drawing;using System.Windows.Forms;using Microsoft.Win32;
-[assembly:AssemblyVersion("0.1.2.5")]
+[assembly:AssemblyVersion("0.1.2.6")]
 class InstallForm:Form {
- const string PayloadHash="__PAYLOAD_HASH__",ProductId="__PRODUCT_ID__",Version="0.1.2.5-beta",Entry="SteamSafe.exe";
+ const string PayloadHash="__PAYLOAD_HASH__",ProductId="__PRODUCT_ID__",Version="0.1.2.6-beta",Entry="SteamSafe.exe";
  TextBox path=new TextBox();CheckBox desktop=new CheckBox(),launch=new CheckBox();Button install=new Button(),browse=new Button();ProgressBar progress=new ProgressBar();Label status=new Label();
  public InstallForm(){Text="SteamSafe Beta 安装向导";ClientSize=new Size(650,380);Font=new Font("Microsoft YaHei UI",10);FormBorderStyle=FormBorderStyle.FixedDialog;MaximizeBox=false;StartPosition=FormStartPosition.CenterScreen;
   var title=new Label(){Text="安装 SteamSafe",Font=new Font(Font.FontFamily,20,FontStyle.Bold),Location=new Point(25,25),AutoSize=true};Controls.Add(title);
   Controls.Add(new Label(){Text="管理员版 · "+Version+" · 内置 Python 运行时",Location=new Point(28,75),AutoSize=true});
-  Controls.Add(new Label(){Text="安装目录",Location=new Point(28,115),AutoSize=true});path.SetBounds(28,145,490,30);path.Text=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),"SteamSafeBeta","v0.1.2.5-"+ProductId.Substring(ProductId.Length-8));Controls.Add(path);
+  Controls.Add(new Label(){Text="安装目录",Location=new Point(28,115),AutoSize=true});path.SetBounds(28,145,490,30);path.Text=Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),"SteamSafeBeta","v0.1.2.6-"+ProductId.Substring(ProductId.Length-8));Controls.Add(path);
   browse.Text="浏览…";browse.SetBounds(530,144,90,32);browse.Click+=delegate{using(var d=new FolderBrowserDialog()){d.Description="选择本地管理员控制的安装目录";d.SelectedPath=path.Text;if(d.ShowDialog(this)==DialogResult.OK)path.Text=d.SelectedPath;}};Controls.Add(browse);
   Controls.Add(new Label(){Text="目录必须位于管理员控制的本地位置；拒绝游戏目录、系统目录及重解析点。",Location=new Point(28,184),Size=new Size(590,40)});
   desktop.Text="创建桌面快捷方式";desktop.Checked=true;desktop.SetBounds(28,224,280,28);Controls.Add(desktop);

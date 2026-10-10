@@ -8,7 +8,7 @@ import threading
 import time
 
 from .core import (CheckResult, OfficialClient, Repairer, SafetyError, local_identity,
-                   read_signed_seed, snapshot, verify)
+                   read_signed_seed, snapshot, verify, sha256, safe_target, atomic_json)
 from . import windows
 from .audit import ClientAuditor, AuditResult, Finding, RiskRemediator, registry_findings
 
@@ -57,6 +57,46 @@ class Engine:
         self.background_pending = False
         self.guard_snapshot = None
         self.last_guard_full_hash = 0
+        self.auto_confirm_lock = threading.Lock()
+        self.auto_confirm_attempt = None
+        self.auto_confirmed_root = None
+
+    def ensure_monitor_root(self):
+        if self.settings.get('root_confirmed', True):
+            return True
+        if not self.settings.get('monitor', True) or not self.settings.get('steam_path'):
+            return False
+        if not self.auto_confirm_lock.acquire(blocking=False):
+            return False
+        try:
+            key = self.settings['steam_path']
+            now = time.monotonic()
+            if self.auto_confirm_attempt and self.auto_confirm_attempt[0] == key and now - self.auto_confirm_attempt[1] < 10:
+                return False
+            self.auto_confirm_attempt = (key, now)
+            root = self.root(require_confirmation=False)
+            registered = windows.discover_steam()
+            if registered is None or registered.resolve() != root.resolve():
+                return False
+            executable = safe_target(root, 'steam.exe')
+            local_identity(root)  # Require a supported installed-client layout.
+            trusted = sha256(executable) == self.seed['files'].get('steam.exe', {}).get('sha256')
+            if not trusted:
+                valid, publisher = windows.signature_info(executable)
+                trusted = valid and publisher.strip().casefold() in {'valve corp.', 'valve corp', 'valve corporation'}
+            if not trusted:
+                self.log('自动目录验证未通过：Steam 启动器不匹配可信基线或 Valve 签名，请手动核对目录。')
+                return False
+            if Path(self.settings['steam_path']).resolve() != root.resolve():
+                return False
+            self.auto_confirmed_root = root.resolve()
+            self.settings['root_confirmed'] = True
+            atomic_json(self.state / 'settings.json', self.settings)
+            self.log('已验证自动发现的 Steam 安装目录，后台检测已启用，无需先点击立即检查。')
+            self.schedule_background_scan('首次自动确认 Steam 目录')
+            return True
+        finally:
+            self.auto_confirm_lock.release()
 
     def client_audit(self, root, ref, refresh_registry=False):
         with self.audit_lock:
@@ -168,7 +208,7 @@ class Engine:
         """Independent fast guard; never waits for an HTTP request or worker queue."""
         if not self.settings.get("monitor", True) or not self.settings.get("steam_path"):
             return
-        if not self.settings.get('root_confirmed',True):
+        if not self.ensure_monitor_root():
             return
         root = self.root()
         if root != self.guard_root:
@@ -352,7 +392,7 @@ class Engine:
         logging.info(text)
         self.signals.log.emit(text)
 
-    def root(self):
+    def root(self, require_confirmation=True):
         value = self.settings.get("steam_path", "")
         if not value:
             raise SafetyError("未找到 Steam，请先选择安装目录")
@@ -368,7 +408,10 @@ class Engine:
             buffer=windows.ctypes.create_unicode_buffer(32768)
             if windows.ctypes.windll.shell32.SHGetFolderPathW(None,folder_id,None,0,buffer)==0 and root.resolve()==Path(buffer.value).resolve():
                 raise SafetyError('拒绝系统公共目录根作为 Steam 修复目标')
-        if not self.settings.get('root_confirmed',True):
+        if require_confirmation and self.auto_confirmed_root is not None and root.resolve() != self.auto_confirmed_root:
+            self.settings['root_confirmed'] = False
+            raise SafetyError('安装目录已改变，需要重新验证')
+        if require_confirmation and not self.settings.get('root_confirmed',True):
             raise SafetyError('请核对安装目录并点击立即检查，确认后才启用管理员修复')
         return root
 
@@ -522,7 +565,7 @@ class Engine:
         raise SafetyError("没有可回滚的修复记录")
 
     def poll(self):
-        if not self.settings.get('root_confirmed',True):
+        if not self.ensure_monitor_root():
             return
         if time.monotonic() < self.retry_after:
             return

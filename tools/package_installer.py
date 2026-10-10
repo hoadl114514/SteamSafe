@@ -15,5 +15,5 @@ compiler=Path(r'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe')
 subprocess.run([str(compiler),'/nologo','/target:winexe','/platform:x64','/optimize+',
     '/reference:System.Windows.Forms.dll','/reference:System.Drawing.dll','/reference:Microsoft.CSharp.dll','/reference:System.IO.Compression.dll','/reference:System.IO.Compression.FileSystem.dll',
     '/win32manifest:'+str(root/'tools/admin.manifest'),'/win32icon:'+str(root/'assets/app.ico'),
-    '/resource:'+str(payload)+',payload.zip','/out:'+str(root/'dist/SteamSafe-v0.1.2.5-Beta-Setup.exe'),str(source),str(root/'build/SetupCommon.generated.cs')],check=True)
+    '/resource:'+str(payload)+',payload.zip','/out:'+str(root/'dist/SteamSafe-v0.1.2.6-Beta-Setup.exe'),str(source),str(root/'build/SetupCommon.generated.cs')],check=True)
 print('Built standalone protected-directory installer; does not install any trusted root certificate')

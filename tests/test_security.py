@@ -604,8 +604,12 @@ class SecurityTests(unittest.TestCase):
         (self.root / 'package/steam_client_win64').write_text('cached metadata')
         self.client.manifest = lambda: self.ref
         engine, signals = self.make_engine()
-        engine.settings.update(monitor=True, root_confirmed=True, stop_on_mismatch=True, auto_repair=False)
+        engine.settings.update(monitor=True, root_confirmed=False, stop_on_mismatch=True, auto_repair=False)
+        discovery = patch('sentinel.engine.windows.discover_steam', return_value=self.root)
+        discovery.start()
+        self.addCleanup(discovery.stop)
         engine.guard_once(watch=True)
+        self.assertTrue(engine.settings['root_confirmed'])
         self.assertTrue(engine.watcher.ready.wait(3))
         self.assertIsNone(engine.watcher.error)
         process = subprocess.Popen([str(executable)], cwd=self.root)
@@ -797,6 +801,40 @@ class SecurityTests(unittest.TestCase):
         with patch('sentinel.engine.windows.launch_steam') as launch,patch('sentinel.engine.windows.steam_processes',return_value=[object()]),patch('sentinel.engine.windows.registry_values',return_value={}):
             engine.launch()
         launch.assert_not_called()
+
+    def test_fresh_monitor_auto_confirms_registered_trusted_root(self):
+        engine, signals = self.make_engine()
+        engine.settings.update(root_confirmed=False, monitor=True)
+        with patch('sentinel.engine.windows.discover_steam', return_value=self.root):
+            self.assertTrue(engine.ensure_monitor_root())
+        self.assertTrue(engine.settings['root_confirmed'])
+        self.assertTrue(engine.background_pending)
+        self.assertTrue(json.loads((self.state / 'settings.json').read_text())['root_confirmed'])
+
+    def test_auto_confirmation_rejects_unregistered_directory(self):
+        engine, _ = self.make_engine()
+        engine.settings.update(root_confirmed=False, monitor=True)
+        with patch('sentinel.engine.windows.discover_steam', return_value=self.base / 'another'), patch('sentinel.engine.windows.signature_info') as signer:
+            self.assertFalse(engine.ensure_monitor_root())
+        signer.assert_not_called()
+        self.assertFalse(engine.settings['root_confirmed'])
+        self.assertFalse(engine.background_pending)
+
+    def test_auto_confirmation_rejects_untrusted_bootstrapper(self):
+        engine, _ = self.make_engine()
+        engine.settings.update(root_confirmed=False, monitor=True)
+        (self.root / 'steam.exe').write_bytes(pe_bytes() + b'tampered')
+        with patch('sentinel.engine.windows.discover_steam', return_value=self.root), patch('sentinel.engine.windows.signature_info', return_value=(False, 'Valve Corp.')):
+            self.assertFalse(engine.ensure_monitor_root())
+        self.assertFalse(engine.settings['root_confirmed'])
+
+    def test_auto_confirmation_accepts_valid_valve_new_version_bootstrapper(self):
+        engine, _ = self.make_engine()
+        engine.settings.update(root_confirmed=False, monitor=True)
+        (self.root / 'steam.exe').write_bytes(pe_bytes() + b'new officially signed version')
+        with patch('sentinel.engine.windows.discover_steam', return_value=self.root), patch('sentinel.engine.windows.signature_info', return_value=(True, 'Valve Corp.')):
+            self.assertTrue(engine.ensure_monitor_root())
+        self.assertTrue(engine.settings['root_confirmed'])
 
     def test_unconfirmed_directory_poll_is_quiet(self):
         engine,signals=self.make_engine();engine.settings['root_confirmed']=False

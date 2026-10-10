@@ -1,4 +1,4 @@
-"""Exercise real .NET missing-task mapping and cleanup of isolated fixture files."""
+﻿"""Exercise real .NET missing-task mapping and cleanup of isolated fixture files."""
 from pathlib import Path
 import json, subprocess, tempfile
 root = Path(__file__).resolve().parents[1]

@@ -43,7 +43,7 @@ Copy-Item -LiteralPath licenses -Destination dist/SteamSafe/licenses -Recurse -F
 if($LASTEXITCODE -ne 0){throw '发行文件清单签署失败。'}
 & $pythonPath tools/package_installer.py
 if($LASTEXITCODE -ne 0){throw '管理员安装器构建失败。'}
-& tools/sign_release.ps1 -Target (Join-Path $projectPath 'dist\SteamSafe-v0.1.2.3-Beta-Setup.exe')
+& tools/sign_release.ps1 -Target (Join-Path $projectPath 'dist\SteamSafe-v0.1.2.4-Beta-Setup.exe')
 & $pythonPath tools/prepare_setup_qa.py
 if($LASTEXITCODE -ne 0){throw '安装向导诊断副本准备失败。'}
 & tools/sign_release.ps1 -Target (Join-Path $projectPath 'build\setup-qa\Setup.exe')

@@ -166,6 +166,13 @@ def main():
             self.startup.toggled.connect(self.autostart)
             opt.addWidget(self.startup)
             layout.addWidget(options)
+            self.monitor_status = QLabel()
+            self.monitor_status.setWordWrap(True)
+            layout.addWidget(self.monitor_status)
+            self.monitor_timer = QTimer(self)
+            self.monitor_timer.timeout.connect(self.refresh_monitor_status)
+            self.monitor_timer.start(1000)
+            self.refresh_monitor_status()
             self.logs = QTextEdit()
             self.logs.setReadOnly(True)
             self.logs.document().setMaximumBlockCount(600)
@@ -216,6 +223,21 @@ def main():
             self.append("保护已准备。联网仅请求官方更新 CDN，不上传文件、账号或扫描报告。")
             self.append(f"启动自检通过：{self_checked} 个发行文件；自签名证书已固定。")
             self.warning_box = None
+
+        def refresh_monitor_status(self):
+            if args.smoke_test:
+                text = '后台监测：界面诊断模式，不执行真实检测'
+            elif not settings['monitor']:
+                text = '后台监测：已关闭'
+            elif not settings['root_confirmed']:
+                text = '后台监测：等待确认 Steam 目录，请点击“立即检查”'
+            elif engine.guard_state == 'failed' or engine.worker_state == 'failed':
+                text = '后台监测：线程启动失败，请查看错误日志'
+            elif engine.guard_state != 'running' or engine.worker_state != 'running':
+                text = '后台监测：线程正在启动'
+            else:
+                text = '后台监测：即时文件守护与完整校验线程已就绪'
+            self.monitor_status.setText(text)
 
         def checkbox(self, layout, text, key):
             cb = QCheckBox(text)

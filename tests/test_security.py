@@ -228,10 +228,12 @@ class SecurityTests(unittest.TestCase):
             engine.scan()
         stop.assert_not_called()
 
-    def test_engine_pending_update_not_repaired(self):
+    def test_engine_verified_update_not_repaired(self):
         engine, _ = self.make_engine()
         engine.settings.update(auto_repair=True, stop_on_mismatch=True)
         self.client.manifest = lambda: self.ref
+        from sentinel.updater import UpdateState
+        engine.update_state = UpdateState(self.root, "200", phase="running", reference={**self.ref, "version": "200"})
         (self.root / "package/steam_client_win64").write_text("pending")
         (self.root / "steamclient64.dll").write_bytes(b"updating")
         with patch("sentinel.engine.windows.stop_steam") as stop:
@@ -431,6 +433,92 @@ class SecurityTests(unittest.TestCase):
         with patch('sentinel.engine.windows.steam_processes', return_value=[process]), patch('sentinel.engine.windows.stop_steam') as stop, patch('sentinel.engine.windows.registry_values', return_value={}):
             engine.guard_once(watch=False)
         stop.assert_called_once()
+
+    def test_guard_cached_package_marker_does_not_hide_trusted_file_tampering(self):
+        from types import SimpleNamespace
+        engine, _ = self.make_engine()
+        engine.settings.update(monitor=True, stop_on_mismatch=True)
+        (self.root / 'package/steam_client_win64').write_text('cached update metadata')
+        (self.root / 'steamclient64.dll').write_bytes(b'modified')
+        process = SimpleNamespace(pid=100, create_time=lambda: 1.0, is_running=lambda: True)
+        with patch('sentinel.engine.windows.steam_processes', return_value=[process]), patch('sentinel.engine.windows.stop_steam') as stop, patch('sentinel.engine.windows.registry_values', return_value={}):
+            engine.guard_once(watch=False)
+        stop.assert_called_once_with(self.root)
+        self.assertIn('steamclient64.dll', engine.commands.get_nowait()[1]['mismatches'])
+
+    def test_guard_lowercase_event_covers_mixed_case_trusted_name(self):
+        from types import SimpleNamespace
+        name = 'GameOverlayRenderer64.dll'
+        target = self.root / name
+        target.write_bytes(b'trusted-overlay')
+        self.ref['files'][name] = {'sha256': sha256(target), 'size': target.stat().st_size, 'package': 'test', 'member': name}
+        engine, _ = self.make_engine()
+        engine.settings.update(monitor=True, stop_on_mismatch=True)
+        engine.guard_root = self.root
+        engine.guard_pids = {(100, 1.0)}
+        target.write_bytes(b'modified-overlay')
+        process = SimpleNamespace(pid=100, create_time=lambda: 1.0, is_running=lambda: True)
+        with patch('sentinel.engine.windows.steam_processes', return_value=[process]), patch('sentinel.engine.windows.stop_steam') as stop, patch('sentinel.engine.windows.registry_values', return_value={}):
+            engine.guard_once(events=('gameoverlayrenderer64.dll',), watch=False)
+        stop.assert_called_once_with(self.root)
+        self.assertIn(name, engine.commands.get_nowait()[1]['mismatches'])
+
+    def test_guard_detects_script_change_after_clean_scan_with_cached_marker(self):
+        from types import SimpleNamespace
+        import os
+        name = 'steamui/1234.js'
+        target = self.root / name
+        target.parent.mkdir()
+        target.write_bytes(b'window.value = 1;')
+        self.ref['files'][name] = {'sha256': sha256(target), 'size': target.stat().st_size, 'package': 'test', 'member': name}
+        engine, _ = self.make_engine()
+        engine.settings.update(monitor=True, stop_on_mismatch=True)
+        engine.scan(online=False, automatic=False)
+        engine.guard_root = self.root
+        engine.guard_pids = {(100, 1.0)}
+        (self.root / 'package/steam_client_win64').write_text('cached metadata')
+        old = target.stat()
+        target.write_bytes(b'window.value = 2;')
+        os.utime(target, ns=(old.st_atime_ns, old.st_mtime_ns))
+        process = SimpleNamespace(pid=100, create_time=lambda: 1.0, is_running=lambda: True)
+        with patch('sentinel.engine.windows.steam_processes', return_value=[process]), patch('sentinel.engine.windows.stop_steam') as stop, patch('sentinel.engine.windows.registry_values', return_value={}):
+            engine.guard_once(events=(name,), watch=False)
+        stop.assert_called_once_with(self.root)
+        self.assertIn(name, engine.commands.get_nowait()[1]['mismatches'])
+
+    def test_guard_preserves_controlled_official_update_hash_transition(self):
+        from types import SimpleNamespace
+        from sentinel.updater import UpdateState
+        engine, _ = self.make_engine()
+        engine.settings.update(monitor=True, stop_on_mismatch=True)
+        engine.update_state = UpdateState(self.root, '100', phase='running', reference=self.ref)
+        (self.root / 'steamclient64.dll').write_bytes(b'transition')
+        process = SimpleNamespace(pid=100, create_time=lambda: 1.0, is_running=lambda: True)
+        with patch('sentinel.engine.windows.steam_processes', return_value=[process]), patch('sentinel.engine.windows.stop_steam') as stop, patch('sentinel.engine.windows.registry_values', return_value={}):
+            engine.guard_once(watch=False)
+        stop.assert_not_called()
+
+    def test_scan_cached_package_marker_does_not_hide_stable_mismatch(self):
+        engine, _ = self.make_engine()
+        engine.settings.update(auto_repair=True, stop_on_mismatch=True)
+        self.client.manifest = lambda: self.ref
+        (self.root / 'package/steam_client_win64').write_text('cached metadata')
+        (self.root / 'steamclient64.dll').write_bytes(b'modified')
+        with patch('sentinel.engine.windows.stop_steam') as stop, patch('sentinel.engine.windows.assert_stopped'):
+            result, _, _ = engine.scan()
+        stop.assert_called_once_with(self.root)
+        self.assertEqual(result.state, 'clean')
+        self.assertEqual((self.root / 'steamclient64.dll').read_bytes(), self.good['steamclient64.dll'])
+
+    def test_background_thread_init_failure_is_reported(self):
+        from sentinel.core import SafetyError
+        for name in ('worker', 'guard'):
+            with self.subTest(name=name):
+                engine, signals = self.make_engine()
+                with patch('sentinel.engine.windows.ctypes.windll.shell32.IsUserAnAdmin', return_value=True), patch('sentinel.privilege.set_admin_default_owner', side_effect=SafetyError('fixture init failure')):
+                    getattr(engine, 'run' if name == 'worker' else 'guard_run')()
+                self.assertEqual(getattr(engine, name + '_state'), 'failed')
+                self.assertTrue(any('fixture init failure' in text for text in signals.alert.values))
 
     def test_guard_holds_relaunch_during_repair(self):
         from types import SimpleNamespace

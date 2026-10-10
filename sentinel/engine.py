@@ -51,6 +51,8 @@ class Engine:
         self.last_clean_repair = {}
         self.reinfection_holds = set()
         self.last_observations = []
+        self.worker_state = 'starting'
+        self.guard_state = 'starting'
 
     def client_audit(self, root, ref, refresh_registry=False):
         with self.audit_lock:
@@ -243,14 +245,17 @@ class Engine:
         mismatches = []
         # Hash changes do not excuse semantic tampering just because an update is pending.
         if ref and not high and not updating:
-            selected = set(ref["files"]) if session_started else {n for n in ref["files"] if n in events}
+            normalized_events = {n.replace('\\', '/').casefold() for n in events}
+            selected = set(ref["files"]) if session_started else {
+                n for n in ref["files"] if n.replace('\\', '/').casefold() in normalized_events}
             if "" in events:
                 selected = set(ref["files"])
             if selected:
                 current = verify(root, ref, paths=selected)
-                if current.state == "mismatch" and not (root / "package/steam_client_win64").exists():
+                if current.state == "mismatch":
                     second = verify(root, ref, paths=selected)
-                    if second.state == "mismatch" and second.mismatches == current.mismatches:
+                    if (second.state == "mismatch" and second.mismatches == current.mismatches
+                            and local_identity(root)[0] == ref['version']):
                         mismatches = current.mismatches
                         high = [Finding("trusted-file-changed", "confirmed", "已确认同版本可信文件发生修改", tuple(mismatches), "restore")]
         if high:
@@ -262,12 +267,26 @@ class Engine:
                 self.report(checked, [f.message for f in result.findings])
                 self.notify("后台复查通过，已解除此前的 Steam 重启拦截。")
         if started and not updating:
+            self.log('即时守护检测到 Steam 进程启动，已完成客户端规则复查并安排完整后台校验。')
             self.commands.put("scan")
 
+    def initialize_worker(self, name):
+        try:
+            if windows.ctypes.windll.shell32.IsUserAnAdmin():
+                from .privilege import set_admin_default_owner
+                set_admin_default_owner()
+        except Exception as error:
+            setattr(self, name + '_state', 'failed')
+            label = '即时文件守护' if name == 'guard' else '完整校验与修复'
+            self.notify(f'后台{label}线程初始化失败，保护未启用：{error}')
+            return False
+        setattr(self, name + '_state', 'running')
+        self.log('即时文件守护线程已就绪。' if name == 'guard' else '后台完整校验与修复线程已就绪。')
+        return True
+
     def guard_run(self):
-        if windows.ctypes.windll.shell32.IsUserAnAdmin():
-            from .privilege import set_admin_default_owner
-            set_admin_default_owner()
+        if not self.initialize_worker('guard'):
+            return
         while not self.shutdown.is_set():
             try:
                 self.guard_once()
@@ -382,10 +401,10 @@ class Engine:
                 else:
                     # If a new version is available while the old one is being replaced,
                     # avoid reverting files mid-update. User can recheck once update finishes.
-                    pending = root / "package" / "steam_client_win64"
-                    if pending.exists() or (latest and latest != result.version):
+                    active_update = self.update_state and self.update_state.root == root
+                    if active_update or local_identity(root)[0] != ref['version'] or (latest and latest != result.version):
                         result = CheckResult("updating", result.version, latest,
-                                             detail="可能存在待安装更新；当前不一致未确认，未自动修复")
+                                             detail="受控更新或版本切换中；当前不一致未确认，未自动修复")
                     else:
                         text = "确认关键文件与该版本基线不一致：" + "、".join(result.mismatches[:8])
                         self.notify(text)
@@ -493,9 +512,8 @@ class Engine:
                 self.notify(issue)
 
     def run(self):
-        if windows.ctypes.windll.shell32.IsUserAnAdmin():
-            from .privilege import set_admin_default_owner
-            set_admin_default_owner()
+        if not self.initialize_worker('worker'):
+            return
         while not self.shutdown.is_set():
             try:
                 command = self.commands.get(timeout=1)
